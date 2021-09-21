@@ -20,6 +20,9 @@ namespace Vistas
     /// </summary>
     public partial class Login : Window
     {
+        public static Usuario oUsuario = new Usuario();
+        public static Usuario oUsuario2 = new Usuario();
+        public static Usuario oUsuario3 = new Usuario();
 
         public static int rol_id;
 
@@ -28,50 +31,6 @@ namespace Vistas
             InitializeComponent();
         }
 
-        public static Usuario oUsuario = new Usuario();
-        public static Usuario oUsuario2 = new Usuario();
-        public static Usuario oUsuario3 = new Usuario();
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            Principal oPrincipal = new Principal();
-            if (txtUsuario.Text == oUsuario.Usu_nombre_usuario && passUsuario.Password == oUsuario.Usr_contraseña ||
-                txtUsuario.Text == oUsuario2.Usu_nombre_usuario && passUsuario.Password == oUsuario2.Usr_contraseña ||
-                txtUsuario.Text == oUsuario3.Usu_nombre_usuario && passUsuario.Password == oUsuario3.Usr_contraseña)
-            {
-                if (txtUsuario.Text == "admin")
-                {
-                    MessageBox.Show("Bienvenido administrador", "Ingresando al Sistema");
-
-                    rol_id = 1;
-                    oPrincipal.Show();
-                }
-                else
-                {
-                    if (txtUsuario.Text == "mozo")
-                    {
-                        MessageBox.Show("Bienvenido mozo", "Ingresando al Sistema");
-                        rol_id = 2;
-                        oPrincipal.Show();
-                    }
-                    else
-                    {
-                        if (txtUsuario.Text == "vendedor")
-                        {
-                            MessageBox.Show("Bienvenido vendedor", "Ingresando al Sistema");
-                            rol_id = 3;
-                            oPrincipal.Show();
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Usuario o Contraseña incorrectos", "¡Atención!");
-            }
-            txtUsuario.Text = "";
-            passUsuario.Password = "";
-        }
 
         private void Window_Initialized(object sender, EventArgs e)
         {
@@ -103,5 +62,50 @@ namespace Vistas
             oUsuario3.Rol_id = 3;
             oUsuario3.Usu_apellido_nombre = "Bart Simpson";
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Principal oPrincipal = new Principal();
+            if (login.Usuario == oUsuario.Usu_nombre_usuario && login.Password == oUsuario.Usr_contraseña ||
+                login.Usuario == oUsuario2.Usu_nombre_usuario && login.Password == oUsuario2.Usr_contraseña ||
+                login.Usuario == oUsuario3.Usu_nombre_usuario && login.Password == oUsuario3.Usr_contraseña)
+            {
+                if (login.Usuario == "admin")
+                {
+                    MessageBox.Show("Bienvenido administrador", "Ingresando al Sistema");
+
+                    rol_id = 1;
+                    oPrincipal.Show();
+                }
+                else
+                {
+                    if (login.Usuario == "mozo")
+                    {
+                        MessageBox.Show("Bienvenido mozo", "Ingresando al Sistema");
+                        rol_id = 2;
+                        oPrincipal.Show();
+                    }
+                    else
+                    {
+                        if (login.Usuario == "vendedor")
+                        {
+                            MessageBox.Show("Bienvenido vendedor", "Ingresando al Sistema");
+                            rol_id = 3;
+                            oPrincipal.Show();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña incorrectos", "¡Atención!");
+            }
+            
+        }
+
+        
+
+
+        
     }
 }

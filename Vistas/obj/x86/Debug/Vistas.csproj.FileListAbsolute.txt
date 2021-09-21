@@ -28,3 +28,7 @@ C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\EliminarCliente.g.cs
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\ModificarCliente.g.cs
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\ControlUsuario\Login.baml
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
