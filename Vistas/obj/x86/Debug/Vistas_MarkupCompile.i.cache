@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\App.xaml
-11-1718631503
+14857809188
 
-15-1262558884
+18-542383815
 13-1531107455
-ControlUsuario\Login.xaml;Articulos\EliminarArticulo.xaml;Cliente\EliminarCliente.xaml;Estilos\Estilos.xaml;Login.xaml;Mesas.xaml;Articulos\ModificarArticulo.xaml;Cliente\ModificarCliente.xaml;Articulos\NuevoArticulo.xaml;Cliente\NuevoCliente.xaml;Principal.xaml;
+Categoria\NuevaCategoria.xaml;ControlUsuario\Login.xaml;Articulos\EliminarArticulo.xaml;Cliente\EliminarCliente.xaml;Estilos\Estilos.xaml;Familia\NuevaFamilia.xaml;Login.xaml;Mesas.xaml;Articulos\ModificarArticulo.xaml;Cliente\ModificarCliente.xaml;Articulos\NuevoArticulo.xaml;Cliente\NuevoCliente.xaml;Principal.xaml;UnidadesMedida\NuevaUM.xaml;
 
 False
 
