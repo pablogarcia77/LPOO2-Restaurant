@@ -63,7 +63,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EliminarArticulo.xaml">
+    <Page Include="Articulos\EliminarArticulo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,7 +83,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModificarArticulo.xaml">
+    <Page Include="Articulos\ModificarArticulo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,7 +91,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NuevoArticulo.xaml">
+    <Page Include="Articulos\NuevoArticulo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,7 +108,7 @@
     <Compile Include="ControlUsuario\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EliminarArticulo.xaml.cs">
+    <Compile Include="Articulos\EliminarArticulo.xaml.cs">
       <DependentUpon>EliminarArticulo.xaml</DependentUpon>
     </Compile>
     <Compile Include="EliminarCliente.xaml.cs">
@@ -120,13 +120,13 @@
     <Compile Include="Mesas.xaml.cs">
       <DependentUpon>Mesas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModificarArticulo.xaml.cs">
+    <Compile Include="Articulos\ModificarArticulo.xaml.cs">
       <DependentUpon>ModificarArticulo.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModificarCliente.xaml.cs">
       <DependentUpon>ModificarCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NuevoArticulo.xaml.cs">
+    <Compile Include="Articulos\NuevoArticulo.xaml.cs">
       <DependentUpon>NuevoArticulo.xaml</DependentUpon>
     </Compile>
     <Compile Include="NuevoCliente.xaml.cs">

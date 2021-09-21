@@ -5,7 +5,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Estilos/Estilos.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="../Estilos/Estilos.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>

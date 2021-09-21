@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\
+C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\App.xaml
-11-1446413473
+C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\App.xaml
+11-1718631503
 
-151245732199
-13912151162
-ControlUsuario\Login.xaml;EliminarArticulo.xaml;EliminarCliente.xaml;Estilos\Estilos.xaml;Login.xaml;Mesas.xaml;ModificarArticulo.xaml;ModificarCliente.xaml;NuevoArticulo.xaml;NuevoCliente.xaml;Principal.xaml;
+15-1262558884
+13-1531107455
+ControlUsuario\Login.xaml;Articulos\EliminarArticulo.xaml;Cliente\EliminarCliente.xaml;Estilos\Estilos.xaml;Login.xaml;Mesas.xaml;Articulos\ModificarArticulo.xaml;Cliente\ModificarCliente.xaml;Articulos\NuevoArticulo.xaml;Cliente\NuevoCliente.xaml;Principal.xaml;
 
 False
 
