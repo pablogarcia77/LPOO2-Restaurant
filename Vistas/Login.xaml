@@ -19,9 +19,10 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Vistas;component/Images/logo_restaurant.png" />
             </Grid.Background>
-            <control:Login x:Name="login" Margin="450,125,50,0"></control:Login>
-            <Button Content="Acceder" Height="43" HorizontalAlignment="Left" Margin="450,31,0,0" Name="btnLogin" VerticalAlignment="Top" Width="126" Click="btnLogin_Click" Grid.Row="1" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
-            <Button Content="Cancelar" Height="43" HorizontalAlignment="Left" Margin="621,31,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="129" Click="btnCancelar_Click" Grid.Row="1" Style="{StaticResource ResourceKey=btn_plantilla_cancelar}"/>
+            <control:Login x:Name="login" Margin="450,180,50,212" Grid.RowSpan="2"></control:Login>
+            <Button Content="Acceder" Height="43" HorizontalAlignment="Left" Margin="450,75,0,0" Name="btnLogin" VerticalAlignment="Top" Width="300" Click="btnLogin_Click" Grid.Row="1" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
+            <Button Content="X" Height="35" Width="35" HorizontalAlignment="Right" Margin="0,5,5,0" Name="btnCerrar" VerticalAlignment="Top"  Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cerrar}"/>
+            <Label Content="Login" Height="54" HorizontalAlignment="Left" Margin="555,120,0,0" Name="label1" VerticalAlignment="Top" FontSize="30" Width="90" FontWeight="Bold" />
         </Grid>
     </Border>
 </Window>

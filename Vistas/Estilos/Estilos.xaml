@@ -26,7 +26,18 @@
             </Grid>
         </Border>
     </ControlTemplate>
-    
+
+    <ControlTemplate x:Key="btn_cerrar" TargetType="{x:Type Button}">
+        <Border BorderBrush="#ea7c69" Background="Transparent" CornerRadius="50" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ContentPresenter Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
     <Style x:Key="btn_plantilla_cancelar" TargetType="Button">
         <Setter Property="Template" Value="{StaticResource ResourceKey=btn_cancelar}"></Setter>
         <Setter Property="Foreground" Value="#ea7c69"/>
@@ -37,9 +48,19 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    
-    
+
+    <Style x:Key="btn_plantilla_cerrar" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=btn_cerrar}"></Setter>
+        <Setter Property="Foreground" Value="#ea7c69"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
     <ControlTemplate x:Key="btn_aceptar" TargetType="{x:Type Button}">
         <Border BorderBrush="#ea7c69" Background="#ea7c69" CornerRadius="10" BorderThickness="1">
             <Grid>
@@ -55,10 +76,10 @@
     
     <Style x:Key="btn_plantilla_aceptar" TargetType="Button">
         <Setter Property="Template" Value="{StaticResource ResourceKey=btn_aceptar}"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property="FontSize" Value="14"/>
-                <Setter Property="Foreground" Value="White"/>
                 <Setter Property="FontWeight" Value="Bold"/>
             </Trigger>
         </Style.Triggers>
