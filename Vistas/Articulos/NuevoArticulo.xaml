@@ -23,8 +23,8 @@
         <TextBox Height="23" HorizontalAlignment="Left" Margin="162,114,0,0" Name="txtUM" VerticalAlignment="Top" Width="120" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="162,148,0,0" Name="txtPrecio" VerticalAlignment="Top" Width="120" />
         <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="162,188,0,0" Name="checkBox1" VerticalAlignment="Top" />
-        <Button Content="Agregar" Height="35" HorizontalAlignment="Left" Margin="12,229,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="123" Click="button1_Click" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
-        <Button Content="Cancelar" Height="35" HorizontalAlignment="Left" Margin="159,229,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="123" Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cancelar}" />
+        <Button Content="Agregar" Height="50" HorizontalAlignment="Left" Margin="12,216,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="123" Click="button1_Click" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
+        <Button Content="Cancelar" Height="50" HorizontalAlignment="Left" Margin="159,216,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="123" Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cancelar}" />
     </Grid>
 </Window>
 

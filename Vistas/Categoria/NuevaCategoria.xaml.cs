@@ -22,5 +22,15 @@ namespace Vistas.Categoria
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancalear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\App.xaml
-11373567703
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\App.xaml
+14857809188
 
-14-1656813970
-13-1531107455
-ControlUsuario\Login.xaml;Articulos\EliminarArticulo.xaml;EliminarCliente.xaml;Estilos\Estilos.xaml;Login.xaml;Mesas.xaml;Articulos\ModificarArticulo.xaml;ModificarCliente.xaml;Articulos\NuevoArticulo.xaml;NuevoCliente.xaml;Principal.xaml;
+17-1812880963
+13912151162
+Categoria\NuevaCategoria.xaml;ControlUsuario\Login.xaml;Articulos\EliminarArticulo.xaml;Cliente\EliminarCliente.xaml;Estilos\Estilos.xaml;Familia\NuevaFamilia.xaml;Login.xaml;Mesas.xaml;Articulos\ModificarArticulo.xaml;Cliente\ModificarCliente.xaml;Articulos\NuevoArticulo.xaml;Cliente\NuevoCliente.xaml;Principal.xaml;UnidadesMedida\NuevaUM.xaml;
 
 False
 

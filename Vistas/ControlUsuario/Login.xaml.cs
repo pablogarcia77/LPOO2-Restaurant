@@ -31,7 +31,7 @@ namespace Vistas.ControlUsuario
 
          public String Password
          {
-             get { return passUsuario.Password; }
+             get { return passUsuario.Text; }
          }
 
         public Login()

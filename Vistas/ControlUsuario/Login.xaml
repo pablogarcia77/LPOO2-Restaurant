@@ -7,13 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="251" d:DesignWidth="393"
              Loaded="Window_Loaded">
-    <Grid Height="194">
+    
+    <Grid Height="90" Width="300">
+        <TextBox Height="40" HorizontalAlignment="Left" Margin="0,0,0,0" Name="txtUsuario" VerticalAlignment="Top" Width="300" FontSize="20" Padding="5" />
+        <TextBlock IsHitTestVisible="False" Text="Usuario" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,6,0,56" Foreground="DarkGray" Height="28" Width="276">
+        <TextBlock.Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Visibility" Value="Collapsed"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Text, ElementName=txtUsuario}" Value="">
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </TextBlock.Style>
+        </TextBlock>
+
+        <TextBox Height="40" HorizontalAlignment="Left" Margin="0,50,0,0" Name="passUsuario" VerticalAlignment="Top" Width="300" Padding="5" FontSize="20" FontFamily="../Fuentes/#password"/>
         
-        <Label Content="Usuario" Height="29" HorizontalAlignment="Right" Margin="0,68,232,0" Name="lblUsuario" VerticalAlignment="Top" Width="126" Foreground="White" BorderBrush="Black" FontWeight="Bold" />
-        <Label Content="Contraseña" Height="29" HorizontalAlignment="Left" Margin="35,109,0,0" Name="lblContraseña" VerticalAlignment="Top" Width="126" Foreground="White" BorderBrush="Black" FontWeight="Bold" />
         
-        <TextBox Height="30" HorizontalAlignment="Left" Margin="167,68,0,0" Name="txtUsuario" VerticalAlignment="Top" Width="158" />
-        <PasswordBox Height="30" HorizontalAlignment="Left" Margin="167,109,0,0" Name="passUsuario" VerticalAlignment="Top" Width="158" />
-        
+        <TextBlock IsHitTestVisible="False" Text="Password" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,56,0,6" Foreground="DarkGray" Height="28" Width="276">
+        <TextBlock.Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Visibility" Value="Collapsed"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Text, ElementName=passUsuario}" Value="">
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </TextBlock.Style>
+        </TextBlock>
     </Grid>
 </UserControl>

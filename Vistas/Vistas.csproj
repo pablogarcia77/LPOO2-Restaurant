@@ -59,6 +59,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Categoria\NuevaCategoria.xaml.cs">
+      <DependentUpon>NuevaCategoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Familia\NuevaFamilia.xaml.cs">
+      <DependentUpon>NuevaFamilia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnidadesMedida\NuevaUM.xaml.cs">
+      <DependentUpon>NuevaUM.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Categoria\NuevaCategoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlUsuario\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -67,11 +80,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EliminarCliente.xaml">
+    <Page Include="Cliente\EliminarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Estilos\Estilos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Familia\NuevaFamilia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,7 +104,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModificarCliente.xaml">
+    <Page Include="Cliente\ModificarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,11 +112,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NuevoCliente.xaml">
+    <Page Include="Cliente\NuevoCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Principal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnidadesMedida\NuevaUM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,7 +132,7 @@
     <Compile Include="Articulos\EliminarArticulo.xaml.cs">
       <DependentUpon>EliminarArticulo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EliminarCliente.xaml.cs">
+    <Compile Include="Cliente\EliminarCliente.xaml.cs">
       <DependentUpon>EliminarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
@@ -123,13 +144,13 @@
     <Compile Include="Articulos\ModificarArticulo.xaml.cs">
       <DependentUpon>ModificarArticulo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModificarCliente.xaml.cs">
+    <Compile Include="Cliente\ModificarCliente.xaml.cs">
       <DependentUpon>ModificarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Articulos\NuevoArticulo.xaml.cs">
       <DependentUpon>NuevoArticulo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NuevoCliente.xaml.cs">
+    <Compile Include="Cliente\NuevoCliente.xaml.cs">
       <DependentUpon>NuevoCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Principal.xaml.cs">
@@ -152,6 +173,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fuentes\password.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,6 +188,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo_restaurant.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
