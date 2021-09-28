@@ -28,12 +28,12 @@ namespace Vistas
             hideSubmenu();
             if (Login.rol_id != 1)
             {
-                mnuUsuario.IsEnabled = false;
-                mnuArticulo.IsEnabled = false;
-                mnuCategoria.IsEnabled = false;
-                mnu_UM.IsEnabled = false;
-                mnuFamilia.IsEnabled = false;
-                mnuCliente.IsEnabled = false;
+                btnUsuarios.IsEnabled = false;
+                btnArticulos.IsEnabled = false;
+                btnCategoria.IsEnabled = false;
+                btnUM.IsEnabled = false;
+                btnFamilia.IsEnabled = false;
+                btnCliente.IsEnabled = false;
             }
             else {
                 mnuMesas.IsEnabled = false;
@@ -43,13 +43,27 @@ namespace Vistas
 
         private void hideSubmenu()
         {
-            stackUsuarios.Height = 0;
-            stackArticulos.Height = 0;
-            stackClientes.Height = 0;
-            stackFamilia.Height = 0;
-            stackCategoria.Height = 0;
-            stackUM.Height = 0;
-            stackVentas.Height = 0;
+            if (stackUsuarios.Height != 0) { stackUsuarios.Height = 0; }
+            if (stackArticulos.Height != 0) { stackArticulos.Height = 0; }
+            if (stackClientes.Height != 0) { stackClientes.Height = 0; }
+            if (stackFamilia.Height != 0) { stackFamilia.Height = 0; }
+            if (stackCategoria.Height != 0) { stackCategoria.Height = 0; }
+            if (stackUM.Height != 0) { stackUM.Height = 0; }
+            if (stackVentas.Height != 0) { stackVentas.Height = 0; }
+        }
+
+        private void showSubMenu(StackPanel panel)
+        {
+            double height = stackMenu.Height;
+            if (panel.Height == 0)
+            {
+                hideSubmenu();
+                panel.Height = height;
+            }
+            else
+            {
+                panel.Height = 0;
+            }
         }
         private void mnuMesas_Click(object sender, RoutedEventArgs e)
         {
@@ -103,86 +117,42 @@ namespace Vistas
 
         private void btnUsuarios_Click(object sender, RoutedEventArgs e)
         {
-            if (stackUsuarios.Height == 0)
-            {
-                stackUsuarios.Height = 180;
-            }
-            else
-            {
-                stackUsuarios.Height = 0;
-            }
+            showSubMenu(stackUsuarios);
         }
 
         private void btnArticulos_Click(object sender, RoutedEventArgs e)
         {
-            if (stackArticulos.Height == 0)
-            {
-                stackArticulos.Height = 180;
-            }
-            else
-            {
-                stackArticulos.Height = 0;
-            }
+            showSubMenu(stackArticulos);
         }
 
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
-            if (stackClientes.Height == 0)
-            {
-                stackClientes.Height = 180;
-            }
-            else
-            {
-                stackClientes.Height = 0;
-            }
+            showSubMenu(stackClientes);
         }
 
         private void btnFamilia_Click(object sender, RoutedEventArgs e)
         {
-            if (stackFamilia.Height == 0)
-            {
-                stackFamilia.Height = 180;
-            }
-            else
-            {
-                stackFamilia.Height = 0;
-            }
+            showSubMenu(stackFamilia);
         }
 
         private void btnCategoria_Click(object sender, RoutedEventArgs e)
         {
-            if (stackCategoria.Height == 0)
-            {
-                stackCategoria.Height = 180;
-            }
-            else
-            {
-                stackCategoria.Height = 0;
-            }
+            showSubMenu(stackCategoria);
         }
 
         private void btnUM_Click(object sender, RoutedEventArgs e)
         {
-            if (stackUM.Height == 0)
-            {
-                stackUM.Height = 180;
-            }
-            else
-            {
-                stackUM.Height = 0;
-            }
+            showSubMenu(stackUM);
         }
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)
         {
-            if (stackVentas.Height == 0)
-            {
-                stackVentas.Height = 45;
-            }
-            else
-            {
-                stackVentas.Height = 0;
-            }
+            showSubMenu(stackVentas);
+        }
+
+        private void btnMesas_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
