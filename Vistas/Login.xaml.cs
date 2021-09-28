@@ -95,6 +95,7 @@ namespace Vistas
                         }
                     }
                 }
+                this.Close();
             }
             else
             {

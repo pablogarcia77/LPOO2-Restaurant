@@ -17,7 +17,7 @@
                 <RowDefinition Height="294*" />
             </Grid.RowDefinitions>
             <Grid.Background>
-                <ImageBrush ImageSource="/Vistas;component/Images/logo_restaurant.png" />
+                <ImageBrush ImageSource="/Vistas;component/Images/login.png" />
             </Grid.Background>
             <control:Login x:Name="login" Margin="450,180,50,212" Grid.RowSpan="2"></control:Login>
             <Button Content="Acceder" Height="43" HorizontalAlignment="Left" Margin="450,75,0,0" Name="btnLogin" VerticalAlignment="Top" Width="300" Click="btnLogin_Click" Grid.Row="1" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />

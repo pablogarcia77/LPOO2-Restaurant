@@ -190,7 +190,10 @@
     <Resource Include="Images\descarga.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\logo_restaurant.png" />
+    <Resource Include="Images\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,48 +1,117 @@
 ﻿<Window x:Class="Vistas.Principal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Principal" Height="313" Width="537" Loaded="Window_Loaded">
-    <Grid>
-        <Menu Height="23" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="515">
-            <MenuItem Header="Usuarios" Name="mnuUsuario">
-                <MenuItem Header="Nuevo Usuario"/>
-                <MenuItem Header="Modificar Usuario"/>
-                <MenuItem Header="Eliminar Usuario"/>
-                <MenuItem Header="Lista de Usuarios"/>
-            </MenuItem>
-            <MenuItem Header="Artículos" Name="mnuArticulo">
-                <MenuItem Header="Nuevo Artículo" Click="nuevoArticulo_Click"/>
-                <MenuItem Header="Modificar Artículo" Click="modificarArticulo_Click"/>
-                <MenuItem Header="Eliminar Artículo" Click="eliminarArticulo_Click"/>
-                <MenuItem Header="Lista de Artículos"/>
-            </MenuItem>
-            <MenuItem Header="Clientes" Name="mnuCliente">
-                <MenuItem Header="Nuevo" Click="NuevoCliente_Click" />
-                <MenuItem Header="Modificar" Click="ModificarCliente_Click" />
-                <MenuItem Header="Eliminar" Click="EliminarCliente_Click" />
-            </MenuItem>
-            <MenuItem Header="Familia" Name="mnuFamilia">
-                <MenuItem Header="Nueva Familia"/>
-                <MenuItem Header="Modificar Familia"/>
-                <MenuItem Header="Eliminar Familia"/>
-                <MenuItem Header="Lista de Familias"/>
-            </MenuItem>
-            <MenuItem Header="Categoría" Name="mnuCategoria">
-                <MenuItem Header="Nueva Categoría"/>
-                <MenuItem Header="Modificar Categoría"/>
-                <MenuItem Header="Eliminar Categoría"/>
-                <MenuItem Header="Lista de Categorías"/>
-            </MenuItem>
-            <MenuItem Header="Unidades de Medida" Name="mnu_UM">
-                <MenuItem Header="Nueva Unidad de Medida"/>
-                <MenuItem Header="Modificar Unidad de Medida"/>
-                <MenuItem Header="Eliminar Unidad de Medida"/>
-                <MenuItem Header="Lista de Unidades de Medidas"/>
-            </MenuItem>
-            <MenuItem Header="Ventas" Name="mnuVentas">
-                <MenuItem Header="Nueva Venta"/>
-            </MenuItem>
-            <MenuItem Header="Mesas" Name="mnuMesas" Click="mnuMesas_Click"></MenuItem>
-        </Menu>
-    </Grid>
+        Title="Principal" Height="500" Width="800" Loaded="Window_Loaded" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Estilos/Estilos.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderThickness="1" BorderBrush="Transparent" CornerRadius="20,20,20,20">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Vistas;component/Images/fondo.png" />
+            </Grid.Background>
+            <Button Content="X" Height="35" Width="35" HorizontalAlignment="Right" Margin="0,5,5,0" Name="btnCerrar" VerticalAlignment="Top"  Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cerrar}"/>
+            <Menu Height="154" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="107" Margin="563,42,0,0">
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </Menu.ItemsPanel>
+                <MenuItem Header="Usuarios" Name="mnuUsuario" HorizontalContentAlignment="Right">
+                    <MenuItem Header="Nuevo Usuario" />
+                    <Separator/>
+                    <MenuItem Header="Modificar Usuario"/>
+                    <MenuItem Header="Eliminar Usuario"/>
+                    <MenuItem Header="Lista de Usuarios"/>
+                </MenuItem>
+                <MenuItem Header="Artículos" Name="mnuArticulo">
+                    <MenuItem Header="Nuevo Artículo" Click="nuevoArticulo_Click"/>
+                    <MenuItem Header="Modificar Artículo" Click="modificarArticulo_Click"/>
+                    <MenuItem Header="Eliminar Artículo" Click="eliminarArticulo_Click"/>
+                    <MenuItem Header="Lista de Artículos"/>
+                </MenuItem>
+                <MenuItem Header="Clientes" Name="mnuCliente">
+                    <MenuItem Header="Nuevo" Click="NuevoCliente_Click" />
+                    <MenuItem Header="Modificar" Click="ModificarCliente_Click" />
+                    <MenuItem Header="Eliminar" Click="EliminarCliente_Click" />
+                </MenuItem>
+                <MenuItem Header="Familia" Name="mnuFamilia">
+                    <MenuItem Header="Nueva Familia"/>
+                    <MenuItem Header="Modificar Familia"/>
+                    <MenuItem Header="Eliminar Familia"/>
+                    <MenuItem Header="Lista de Familias"/>
+                </MenuItem>
+                <MenuItem Header="Categoría" Name="mnuCategoria">
+                    <MenuItem Header="Nueva Categoría"/>
+                    <MenuItem Header="Modificar Categoría"/>
+                    <MenuItem Header="Eliminar Categoría"/>
+                    <MenuItem Header="Lista de Categorías"/>
+                </MenuItem>
+                <MenuItem Header="Unidades de Medida" Name="mnu_UM">
+                    <MenuItem Header="Nueva Unidad de Medida"/>
+                    <MenuItem Header="Modificar Unidad de Medida"/>
+                    <MenuItem Header="Eliminar Unidad de Medida"/>
+                    <MenuItem Header="Lista de Unidades de Medidas"/>
+                </MenuItem>
+                <MenuItem Header="Ventas" Name="mnuVentas">
+                    <MenuItem Header="Nueva Venta"/>
+                </MenuItem>
+                <MenuItem Header="Mesas" Name="mnuMesas" Click="mnuMesas_Click"></MenuItem>
+            </Menu>
+            <!--<ScrollViewer Width="150" VerticalScrollBarVisibility="Auto" Margin="0,10,644,6" Background="#1f1d2b" HorizontalAlignment="Left">-->
+                <StackPanel Height="Auto" Margin="0,27,0,0" Name="stackMenu" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left">
+                    <Button Content="Usuarios" Height="45" Name="button1" Width="150" Click="btnUsuarios_Click" Style="{StaticResource ResourceKey=btn_menu}" />
+                    <StackPanel Height="180" Name="stackUsuarios" Width="150" Background="#54363b">
+                        <Button Content="Nuevo Usuario" Height="45" Name="btnNuevoUsuario" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                        <Button Content="Modificar Usuario" Height="45" Name="btnModificarUsuario" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Eliminar Usuario" Height="45" Name="btnEliminarUsuario" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Listar Usuarios" Height="45" Name="btnListarUsuarios" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                    <Button Content="Artículos" Height="45" Name="btnArticulos" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnArticulos_Click" />
+                    <StackPanel Height="180" Name="stackArticulos" Width="150" Background="#54363b">
+                        <Button Content="Nuevo Artículo" Height="45" Name="btnNuevoArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                        <Button Content="Modificar Artículo" Height="45" Name="btnModificarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Eliminar Artículo" Height="45" Name="btnEliminarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Listado de Artículos" Height="45" Name="btnListarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                    <Button Content="Clientes" Height="45" Name="btnCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnClientes_Click" />
+                    <StackPanel Height="180" Name="stackClientes" Width="150" Background="#54363b">
+                        <Button Content="Nuevo Cliente" Height="45" Name="btnNuevoCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                        <Button Content="Modificar Cliente" Height="45" Name="btnModificarCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Eliminar Cliente" Height="45" Name="btnEliminarCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Listado de Clientes" Height="45" Name="btnListarClientes" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                    <Button Content="Familia" Height="45" Name="btnFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnFamilia_Click" />
+                    <StackPanel Height="180" Name="stackFamilia" Width="150" Background="#54363b">
+                        <Button Content="Nueva Familia" Height="45" Name="btnNuevaFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                        <Button Content="Modificar Familia" Height="45" Name="btnModificarFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Eliminar Familia" Height="45" Name="btnEliminarFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Listado de Familias" Height="45" Name="btnListarFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                    <Button Content="Categoría" Height="45" Name="btnCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnCategoria_Click" />
+                    <StackPanel Height="180" Name="stackCategoria" Width="150" Background="#54363b">
+                        <Button Content="Nueva Categoria" Height="45" Name="btnNuevaCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                        <Button Content="Modificar Categoria" Height="45" Name="btnModificarCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Eliminar Categoria" Height="45" Name="btnEliminarCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Listado de Categorias" Height="45" Name="btnListarCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                    <Button Content="Unidades de Medida" Height="45" Name="btnUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnUM_Click" />
+                    <StackPanel Height="180" Name="stackUM" Width="150" Background="#54363b">
+                        <Button Content="Nueva UM" Height="45" Name="btnNuevaUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                        <Button Content="Modificar UM" Height="45" Name="btnModificarUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Eliminar UM" Height="45" Name="btnEliminarUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}"/>
+                        <Button Content="Listado de UM" Height="45" Name="btnListarUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                    <Button Content="Ventas" Height="45" Name="btnVentas" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnVentas_Click" />
+                    <StackPanel Height="45" Name="stackVentas" Width="150" Background="#54363b">
+                        <Button Content="Nueva Venta" Height="45" Name="btnNuevaVenta" Width="150" Style="{StaticResource ResourceKey=btn_menu}" />
+                    </StackPanel>
+                </StackPanel>
+            <!--</ScrollViewer>-->
+        </Grid>
+    </Border>
 </Window>
