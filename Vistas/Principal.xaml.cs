@@ -36,7 +36,7 @@ namespace Vistas
                 btnCliente.IsEnabled = false;
             }
             else {
-                mnuMesas.IsEnabled = false;
+                btnMesas.IsEnabled = false;
             }
             
         }
@@ -65,43 +65,38 @@ namespace Vistas
                 panel.Height = 0;
             }
         }
-        private void mnuMesas_Click(object sender, RoutedEventArgs e)
-        {
-            Mesas oMesas = new Mesas();
-            oMesas.Show();
-        }
 
-        private void nuevoArticulo_Click(object sender, RoutedEventArgs e)
+        private void btnNuevoArticulo_Click(object sender, RoutedEventArgs e)
         {
             NuevoArticulo oNuevoArticulo = new NuevoArticulo();
             oNuevoArticulo.Show();
         }
 
-        private void modificarArticulo_Click(object sender, RoutedEventArgs e)
+        private void btnModificarArticulo_Click(object sender, RoutedEventArgs e)
         {
             ModificarArticulo oNuevoModificarArt = new ModificarArticulo();
             oNuevoModificarArt.Show();
         }
 
-        private void eliminarArticulo_Click(object sender, RoutedEventArgs e)
+        private void btnEliminarArticulo_Click(object sender, RoutedEventArgs e)
         {
             EliminarArticulo oEliminarArt = new EliminarArticulo();
             oEliminarArt.Show();
         }
 
-        private void NuevoCliente_Click(object sender, RoutedEventArgs e)
+        private void btnNuevoCliente_Click(object sender, RoutedEventArgs e)
         {
             NuevoCliente oNuevoCliente = new NuevoCliente();
             oNuevoCliente.Show();
         }
 
-        private void ModificarCliente_Click(object sender, RoutedEventArgs e)
+        private void btnModificarCliente_Click(object sender, RoutedEventArgs e)
         {
             ModificarCliente oModificarCliente = new ModificarCliente();
             oModificarCliente.Show();
         }
 
-        private void EliminarCliente_Click(object sender, RoutedEventArgs e)
+        private void btmEliminarCliente_Click(object sender, RoutedEventArgs e)
         {
             EliminarCliente oEliminarCliente = new EliminarCliente();
             oEliminarCliente.Show();
@@ -125,9 +120,33 @@ namespace Vistas
             showSubMenu(stackArticulos);
         }
 
+        private void btnListarArticulo_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnModificarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnEliminarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnListarUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
             showSubMenu(stackClientes);
+        }
+
+        private void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnListarClientes_Click(object sender, RoutedEventArgs e)
+        {
         }
 
         private void btnFamilia_Click(object sender, RoutedEventArgs e)
@@ -135,24 +154,78 @@ namespace Vistas
             showSubMenu(stackFamilia);
         }
 
+        private void btnNuevaFamilia_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnEliminarFamilia_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnModificarFamilia_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnListarFamilia_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void btnCategoria_Click(object sender, RoutedEventArgs e)
         {
             showSubMenu(stackCategoria);
+        }
+
+        private void btnNuevaCategoria_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnEliminarCategoria_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnModificarCategoria_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnListarCategoria_Click(object sender, RoutedEventArgs e)
+        {
         }
 
         private void btnUM_Click(object sender, RoutedEventArgs e)
         {
             showSubMenu(stackUM);
         }
+        private void btnNuevaUM_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void btnEliminarUM_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnModificarUM_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnListarUM_Click(object sender, RoutedEventArgs e)
+        {
+        }
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)
         {
             showSubMenu(stackVentas);
         }
+        private void btnNuevaVenta_Click(object sender, RoutedEventArgs e)
+        {
+        }
 
         private void btnMesas_Click(object sender, RoutedEventArgs e)
         {
-            
+            Mesas oMesas = new Mesas();
+            oMesas.Show();
+        }
+
+        private void btnNuevoUsuario_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

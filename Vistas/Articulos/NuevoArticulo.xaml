@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.NuevoArticulo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Nuevo Articulo" Height="320" Width="316" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Nuevo Articulo" Height="320" Width="316" Loaded="Window_Loaded" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="Manual" Left="300">
     
     <Window.Resources>
         <ResourceDictionary>
