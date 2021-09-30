@@ -39,3 +39,44 @@ C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Cliente\ModificarCliente.g.cs
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Cliente\NuevoCliente.g.cs
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\UnidadesMedida\NuevaUM.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\bin\Debug\Vistas.exe
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\bin\Debug\ClasesBase.exe
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Categoria\NuevaCategoria.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\EliminarArticulo.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Cliente\EliminarCliente.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Estilos\Estilos.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Familia\NuevaFamilia.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Mesas.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\ModificarArticulo.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Cliente\ModificarCliente.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\NuevoArticulo.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Cliente\NuevoCliente.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Principal.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\UnidadesMedida\NuevaUM.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Categoria\NuevaCategoria.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\EliminarArticulo.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Cliente\EliminarCliente.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Familia\NuevaFamilia.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Login.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Mesas.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\ModificarArticulo.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Cliente\ModificarCliente.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\NuevoArticulo.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Cliente\NuevoCliente.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Principal.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\UnidadesMedida\NuevaUM.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\App.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas_MarkupCompile.cache
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\ControlUsuario\Login.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Login.baml
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas.g.resources
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
