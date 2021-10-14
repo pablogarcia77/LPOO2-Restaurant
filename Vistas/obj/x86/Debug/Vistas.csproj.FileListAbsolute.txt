@@ -83,3 +83,4 @@ C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\bin\Debug\Vistas.exe.config
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\MostrarArticulos.baml
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\Vistas\obj\x86\Debug\Articulos\MostrarArticulos.g.cs
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\bin\Debug\Vistas.exe.config
