@@ -1,0 +1,16 @@
+﻿<Window x:Class="Vistas.Test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Test" Height="300" Width="501">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="47,26,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="371" ItemsSource="{Binding}" Loaded="dataGrid1_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding Art_id}" />
+                <DataGridTextColumn Header="Descripcion" Binding="{Binding Art_Descrip}" />
+                <DataGridTextColumn Header="Familia" Binding="{Binding Fam_id}" />
+                <DataGridTextColumn Header="Unidad de Medida" Binding="{Binding UM_Id}" />
+                <DataGridTextColumn Header="Precio de Venta" Binding="{Binding Art_Precio}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

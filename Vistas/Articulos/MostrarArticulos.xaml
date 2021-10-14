@@ -1,0 +1,16 @@
+﻿<Window x:Class="Vistas.Articulos.MostrarArticulos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MostrarArticulos" Height="300" Width="517">
+    <Grid Loaded="Grid_Loaded">
+        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" Height="200" HorizontalAlignment="Left" Margin="88,25,0,0" Name="dataGrid1"  VerticalAlignment="Top" Width="321">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Codigo" Binding="{Binding Art_Id}" />
+                <DataGridTextColumn  Header="Descripción" Binding="{Binding Art_Descrip}" />
+                <DataGridTextColumn  Header="Familia" Binding="{Binding Fam_Id}" />
+                <DataGridTextColumn  Header="Unidad de Medida" Binding="{Binding UM_Id}" />
+                <DataGridTextColumn  Header="Precio" Binding="{Binding Art_Precio}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

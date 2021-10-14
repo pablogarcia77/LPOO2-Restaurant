@@ -59,6 +59,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Articulos\MostrarArticulos.xaml.cs">
+      <DependentUpon>MostrarArticulos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Categoria\NuevaCategoria.xaml.cs">
       <DependentUpon>NuevaCategoria.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,10 @@
     <Compile Include="UnidadesMedida\NuevaUM.xaml.cs">
       <DependentUpon>NuevaUM.xaml</DependentUpon>
     </Compile>
+    <Page Include="Articulos\MostrarArticulos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Categoria\NuevaCategoria.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,6 +181,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fuentes\password.ttf" />
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
