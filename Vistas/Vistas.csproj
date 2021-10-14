@@ -62,6 +62,7 @@
     <Compile Include="Categoria\NuevaCategoria.xaml.cs">
       <DependentUpon>NuevaCategoria.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Conversores\ConversorDeEstados.cs" />
     <Compile Include="Familia\NuevaFamilia.xaml.cs">
       <DependentUpon>NuevaFamilia.xaml</DependentUpon>
     </Compile>
@@ -96,7 +97,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Mesas.xaml">
+    <Page Include="Mesas\Mesas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,7 +139,7 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Mesas.xaml.cs">
+    <Compile Include="Mesas\Mesas.xaml.cs">
       <DependentUpon>Mesas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Articulos\ModificarArticulo.xaml.cs">
@@ -195,6 +196,12 @@
   <ItemGroup>
     <Resource Include="Images\fondo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mesas\EstadosMesa.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
