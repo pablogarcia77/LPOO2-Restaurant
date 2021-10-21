@@ -65,6 +65,7 @@
     <Compile Include="Pedido.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="TrabajarArticulos.cs" />
+    <Compile Include="TrabajarCliente.cs" />
     <Compile Include="Unidad_Medida.cs" />
     <Compile Include="Usuario.cs" />
     <Page Include="MainWindow.xaml">

@@ -23,7 +23,7 @@
   <Class Name="ClasesBase.Properties.Settings" Collapsed="true">
     <Position X="2.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAE=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="ClasesBase.Usuario">
@@ -50,9 +50,16 @@
   <Class Name="ClasesBase.Articulo">
     <Position X="12.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IgBAACoAQAAAAAAAAAAgAAAAIAAAAAIACAACAAAAAAA=</HashCode>
+      <HashCode>IgFQACoAQAAAAAAgAAAgAAAAIAAAAAIACAAKAAAAAAA=</HashCode>
       <FileName>Articulo.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Articulo1" />
+      <Property Name="Familia" />
+      <Property Name="Categoria" />
+      <Property Name="Unidad_Medida" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClasesBase.Familia">
     <Position X="14.5" Y="1" Width="1.5" />
@@ -78,9 +85,10 @@
   <Class Name="ClasesBase.Cliente">
     <Position X="20.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAABAAAACQAhAAgCIQAAAgQAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAABAAQACSAhAAgCIQAAAgQAAAAEAAAAAAAA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClasesBase.Mesa">
     <Position X="22.75" Y="1.25" Width="1.5" />

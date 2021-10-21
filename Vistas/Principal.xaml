@@ -28,6 +28,7 @@
                     <Button Content="Nuevo Artículo" Height="45" Name="btnNuevoArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevoArticulo_Click"/>
                     <Button Content="Modificar Artículo" Height="45" Name="btnModificarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarArticulo_Click"/>
                     <Button Content="Eliminar Artículo" Height="45" Name="btnEliminarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarArticulo_Click"/>
+                    <Button Content="Mostrar Artículos" Height="45" Name="btnMostrarArticulos" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnMostrarArticulos_Click"/>
                     <Button Content="Listado de Artículos" Height="45" Name="btnListarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarArticulo_Click"/>
                 </StackPanel>
                 <Button Content="Clientes" Height="45" Name="btnCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnClientes_Click" />

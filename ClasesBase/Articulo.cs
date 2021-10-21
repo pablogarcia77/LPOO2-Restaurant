@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 
 namespace ClasesBase
 {
-    public class Articulo
+    public class Articulo : INotifyPropertyChanged
     {
         private int art_id;
 
@@ -48,6 +49,39 @@ namespace ClasesBase
         {
             get { return art_maneja_stock; }
             set { art_maneja_stock = value; }
+        }
+
+        public Familia Familia
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Categoria Categoria
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Unidad_Medida Unidad_Medida
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
         }
     }
 }

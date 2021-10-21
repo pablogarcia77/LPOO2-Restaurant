@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using Vistas.Articulos;
+
 namespace Vistas
 {
     /// <summary>
@@ -34,6 +36,7 @@ namespace Vistas
                 btnUM.IsEnabled = false;
                 btnFamilia.IsEnabled = false;
                 btnCliente.IsEnabled = false;
+                btnMostrarArticulos.IsEnabled = false;
             }
             else {
                 btnMesas.IsEnabled = false;
@@ -122,6 +125,13 @@ namespace Vistas
 
         private void btnListarArticulo_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void btnMostrarArticulos_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarArticulos oMostrarArticulos = new MostrarArticulos();
+            oMostrarArticulos.Show();
+
         }
 
         private void btnModificarUsuario_Click(object sender, RoutedEventArgs e)
