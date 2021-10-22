@@ -1,0 +1,44 @@
+﻿<Window x:Class="Vistas.NuevoCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
+        Title="Nuevo Cliente" Height="300" Width="350" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ObjectDataProvider x:Key="Datos" ObjectType="{x:Type svc:TrabajarCliente}" MethodName="TraerCliente"></ObjectDataProvider>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Estilos/Estilos.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+
+        <Label Content="Codigo" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblCodigo" VerticalAlignment="Top" />
+        <Label Content="Apellido" Height="28" HorizontalAlignment="Left" Margin="12,46,0,0" Name="lblApellido" VerticalAlignment="Top" />
+        <Label Content="Nombre" Height="28" HorizontalAlignment="Left" Margin="12,80,0,0" Name="lblNombre" VerticalAlignment="Top" />
+        <Label Content="Direccion" Height="28" HorizontalAlignment="Left" Margin="12,114,0,0" Name="lblDireccion" VerticalAlignment="Top" />
+        <Label Content="Telefono" Height="28" HorizontalAlignment="Left" Margin="12,148,0,0" Name="lblTelefono" VerticalAlignment="Top" />
+        <Label Content="Email" Height="28" HorizontalAlignment="Left" Margin="12,182,0,0" Name="lblEmail" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="113,12,0,0" Name="txtCodigo" VerticalAlignment="Top" Width="153" Style="{StaticResource EstiloError}" DataContext="{StaticResource Datos}">
+            <TextBox.Text>
+                <Binding Path="Cli_id" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="true" ValidatesOnExceptions="true" />
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="113,46,0,0" Name="txtApellido" VerticalAlignment="Top" Width="153" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="113,80,0,0" Name="txtNombre" VerticalAlignment="Top" Width="153" Style="{StaticResource EstiloError}" DataContext="{StaticResource Datos}">
+            <TextBox.Text>
+                <Binding Path="Cli_nombre" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="113,114,0,0" Name="txtDireccion" VerticalAlignment="Top" Width="153" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="113,148,0,0" Name="txtTelefono" VerticalAlignment="Top" Width="153" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="113,182,0,0" Name="txtEmail" VerticalAlignment="Top" Width="153" />
+        <Button Content="Agregar" Height="32" HorizontalAlignment="Left" Margin="12,217,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="115" Click="btnAgregar_Click" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
+        <Button Content="Cancelar" Height="32" HorizontalAlignment="Left" Margin="151,217,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="115" Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cancelar}" />
+    </Grid>
+</Window>

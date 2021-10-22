@@ -1,0 +1,11 @@
+﻿<Window x:Class="Vistas.EliminarCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Eliminar Cliente" Height="165" Width="322" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Ingrese Codigo" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="lblCodigo" VerticalAlignment="Top" Width="110" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="140,10,0,0" Name="txtCodigo" VerticalAlignment="Top" Width="147" />
+        <Button Content="Eliminar" Height="32" HorizontalAlignment="Left" Margin="10,75,0,0" Name="btnEliminar" VerticalAlignment="Top" Width="125" Click="btnEliminar_Click" />
+        <Button Content="Cancelar" Height="32" HorizontalAlignment="Left" Margin="162,75,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click" />
+    </Grid>
+</Window>

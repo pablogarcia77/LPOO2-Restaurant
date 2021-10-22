@@ -1,0 +1,72 @@
+﻿<Window x:Class="Vistas.Principal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Principal" Height="500" Width="800" Loaded="Window_Loaded" WindowStyle="None" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Estilos/Estilos.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderThickness="1" BorderBrush="Transparent" CornerRadius="20,20,20,20">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Vistas;component/Images/fondo.png" />
+            </Grid.Background>
+            <Button Content="X" Height="35" Width="35" HorizontalAlignment="Right" Margin="0,5,5,0" Name="btnCerrar" VerticalAlignment="Top"  Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cerrar}"/>
+            <StackPanel Height="Auto" Margin="0,27,0,0" Name="stackMenu" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left">
+                <Button Content="Usuarios" Height="45" Name="btnUsuarios" Width="150" Click="btnUsuarios_Click" Style="{StaticResource ResourceKey=btn_menu}" />
+                <StackPanel Height="Auto" Name="stackUsuarios" Width="150" Background="#54363b">
+                    <Button Content="Nuevo Usuario" Height="45" Name="btnNuevoUsuario" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevoUsuario_Click"/>
+                    <Button Content="Modificar Usuario" Height="45" Name="btnModificarUsuario" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarUsuario_Click"/>
+                    <Button Content="Eliminar Usuario" Height="45" Name="btnEliminarUsuario" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarUsuario_Click"/>
+                    <Button Content="Listar Usuarios" Height="45" Name="btnListarUsuarios" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarUsuarios_Click"/>
+                </StackPanel>
+                <Button Content="Artículos" Height="45" Name="btnArticulos" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnArticulos_Click" />
+                <StackPanel Height="Auto" Name="stackArticulos" Width="150" Background="#54363b">
+                    <Button Content="ABM Articulo" Height="45" Name="btnABMArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnABMArticulo_Click"/>
+                    <Button Content="Nuevo Artículo" Height="45" Name="btnNuevoArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevoArticulo_Click"/>
+                    <Button Content="Modificar Artículo" Height="45" Name="btnModificarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarArticulo_Click"/>
+                    <Button Content="Eliminar Artículo" Height="45" Name="btnEliminarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarArticulo_Click"/>
+                    <Button Content="Mostrar Artículos" Height="45" Name="btnMostrarArticulos" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnMostrarArticulos_Click"/>
+                    <Button Content="Listado de Artículos" Height="45" Name="btnListarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarArticulo_Click"/>
+                    <Button Content="Coleccion de Artículos" Height="45" Name="btnListarColeccion" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarColeccion_Click"/>
+                </StackPanel>
+                <Button Content="Clientes" Height="45" Name="btnCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnClientes_Click" />
+                <StackPanel Height="Auto" Name="stackClientes" Width="150" Background="#54363b">
+                    <Button Content="Nuevo Cliente" Height="45" Name="btnNuevoCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevoCliente_Click"/>
+                    <Button Content="Modificar Cliente" Height="45" Name="btnModificarCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarCliente_Click"/>
+                    <Button Content="Eliminar Cliente" Height="45" Name="btnEliminarCliente" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarCliente_Click"/>
+                    <Button Content="Listado de Clientes" Height="45" Name="btnListarClientes" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarClientes_Click"/>
+                </StackPanel>
+                <Button Content="Familia" Height="45" Name="btnFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnFamilia_Click" />
+                <StackPanel Height="Auto" Name="stackFamilia" Width="150" Background="#54363b">
+                    <Button Content="Nueva Familia" Height="45" Name="btnNuevaFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevaFamilia_Click"/>
+                    <Button Content="Modificar Familia" Height="45" Name="btnModificarFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarFamilia_Click"/>
+                    <Button Content="Eliminar Familia" Height="45" Name="btnEliminarFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarFamilia_Click"/>
+                    <Button Content="Listado de Familias" Height="45" Name="btnListarFamilia" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarFamilia_Click"/>
+                </StackPanel>
+                <Button Content="Categoría" Height="45" Name="btnCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnCategoria_Click" />
+                <StackPanel Height="Auto" Name="stackCategoria" Width="150" Background="#54363b">
+                    <Button Content="Nueva Categoria" Height="45" Name="btnNuevaCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevaCategoria_Click"/>
+                    <Button Content="Modificar Categoria" Height="45" Name="btnModificarCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarCategoria_Click"/>
+                    <Button Content="Eliminar Categoria" Height="45" Name="btnEliminarCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarCategoria_Click"/>
+                    <Button Content="Listado de Categorias" Height="45" Name="btnListarCategoria" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarCategoria_Click"/>
+                </StackPanel>
+                <Button Content="Unidades de Medida" Height="45" Name="btnUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnUM_Click" />
+                <StackPanel Height="Auto" Name="stackUM" Width="150" Background="#54363b">
+                    <Button Content="Nueva UM" Height="45" Name="btnNuevaUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevaUM_Click"/>
+                    <Button Content="Modificar UM" Height="45" Name="btnModificarUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarUM_Click"/>
+                    <Button Content="Eliminar UM" Height="45" Name="btnEliminarUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarUM_Click"/>
+                    <Button Content="Listado de UM" Height="45" Name="btnListarUM" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnListarUM_Click"/>
+                </StackPanel>
+                <Button Content="Ventas" Height="45" Name="btnVentas" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnVentas_Click" />
+                <StackPanel Height="Auto" Name="stackVentas" Width="150" Background="#54363b">
+                    <Button Content="Nueva Venta" Height="45" Name="btnNuevaVenta" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevaVenta_Click"/>
+                </StackPanel>
+                <Button Content="Mesas" Height="45" Name="btnMesas" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnMesas_Click" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

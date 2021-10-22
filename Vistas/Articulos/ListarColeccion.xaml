@@ -1,0 +1,44 @@
+﻿<Window x:Class="Vistas.Articulos.ListarColeccion"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:coleccionArticulos="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="ListarColeccion" Height="375" Width="569">
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="LIST_ART"
+            ObjectType="{x:Type coleccionArticulos:TrabajarArticulos}"
+            MethodName="TraerArticulosObs"
+        />
+        <CollectionViewSource
+            x:Key="VISTA_ART"
+            Source="{StaticResource ResourceKey=LIST_ART}"
+            Filter="eventVistaArt_Filter"
+         >
+            <CollectionViewSource.SortDescriptions>
+                
+                <componentModel:SortDescription PropertyName="Art_Descrip" Direction="Ascending"/>
+                
+            </CollectionViewSource.SortDescriptions>
+
+        </CollectionViewSource>
+
+    </Window.Resources>
+    <Grid>
+
+        
+            <ListView Grid.Row="1" Name="lstArt" ItemsSource="{Binding Source={StaticResource VISTA_ART}}" Margin="0,50,0,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Articulo" Width="150" DisplayMemberBinding="{Binding Art_descrip}"/>
+                        <GridViewColumn Header="Familia" Width="150" DisplayMemberBinding="{Binding Familia.Fam_descrip}"/>
+                        <GridViewColumn Header="UM" Width="80" DisplayMemberBinding="{Binding Unidad_Medida.Um_descrip}"/>
+                        <GridViewColumn Header="Precio" Width="50" DisplayMemberBinding="{Binding Art_precio}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        
+        <Label Content="Filtro de Articulos" Height="28" HorizontalAlignment="Left" Margin="12,17,0,0" Name="lblFiltro" VerticalAlignment="Top" />
+        <TextBox Height="22" HorizontalAlignment="Left" Margin="121,17,0,0" Name="txtFiltro" VerticalAlignment="Top" Width="259" TextChanged="txtFiltro_TextChanged" />
+    </Grid>
+</Window>
