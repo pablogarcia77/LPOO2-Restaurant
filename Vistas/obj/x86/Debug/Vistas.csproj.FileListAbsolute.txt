@@ -42,3 +42,5 @@ C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas
 C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Vistas.exe
 C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Vistas.pdb
 C:\Users\pablo\OneDrive\Documentos\Visual Studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Articulos\ABMArticulos.baml
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\Vistas\obj\x86\Debug\Articulos\ABMArticulos.g.cs

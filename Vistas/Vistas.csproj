@@ -59,6 +59,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Articulos\ABMArticulos.xaml.cs">
+      <DependentUpon>ABMArticulos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Articulos\MostrarArticulos.xaml.cs">
       <DependentUpon>MostrarArticulos.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,10 @@
     <Compile Include="UnidadesMedida\NuevaUM.xaml.cs">
       <DependentUpon>NuevaUM.xaml</DependentUpon>
     </Compile>
+    <Page Include="Articulos\ABMArticulos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Articulos\MostrarArticulos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -25,6 +25,7 @@
                 </StackPanel>
                 <Button Content="Artículos" Height="45" Name="btnArticulos" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnArticulos_Click" />
                 <StackPanel Height="Auto" Name="stackArticulos" Width="150" Background="#54363b">
+                    <Button Content="ABM Articulo" Height="45" Name="btnABMArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnABMArticulo_Click"/>
                     <Button Content="Nuevo Artículo" Height="45" Name="btnNuevoArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnNuevoArticulo_Click"/>
                     <Button Content="Modificar Artículo" Height="45" Name="btnModificarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnModificarArticulo_Click"/>
                     <Button Content="Eliminar Artículo" Height="45" Name="btnEliminarArticulo" Width="150" Style="{StaticResource ResourceKey=btn_menu}" Click="btnEliminarArticulo_Click"/>

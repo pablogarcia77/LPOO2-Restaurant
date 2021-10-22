@@ -237,5 +237,11 @@ namespace Vistas
         private void btnNuevoUsuario_Click(object sender, RoutedEventArgs e)
         {
         }
+
+        private void btnABMArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            ABMArticulos oABMArticulos = new ABMArticulos();
+            oABMArticulos.Show();
+        }
     }
 }
