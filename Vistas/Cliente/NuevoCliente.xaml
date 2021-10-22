@@ -21,13 +21,13 @@
         <Label Content="Email" Height="28" HorizontalAlignment="Left" Margin="12,182,0,0" Name="lblEmail" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="113,12,0,0" Name="txtCodigo" VerticalAlignment="Top" Width="153" Style="{StaticResource EstiloError}" DataContext="{StaticResource Datos}">
             <TextBox.Text>
-                <Binding Path="Id" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="true" ValidatesOnExceptions="true" />
+                <Binding Path="Cli_id" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="true" ValidatesOnExceptions="true" />
             </TextBox.Text>
         </TextBox>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="113,46,0,0" Name="txtApellido" VerticalAlignment="Top" Width="153" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="113,80,0,0" Name="txtNombre" VerticalAlignment="Top" Width="153" Style="{StaticResource EstiloError}" DataContext="{StaticResource Datos}">
             <TextBox.Text>
-                <Binding Path="Nombre" UpdateSourceTrigger="PropertyChanged">
+                <Binding Path="Cli_nombre" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <ExceptionValidationRule />
                         <DataErrorValidationRule />

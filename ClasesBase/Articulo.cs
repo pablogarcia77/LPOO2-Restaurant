@@ -8,6 +8,7 @@ namespace ClasesBase
 {
     public class Articulo : INotifyPropertyChanged
     {
+
         private int art_id;
 
         public int Art_id
@@ -51,37 +52,71 @@ namespace ClasesBase
             set { art_maneja_stock = value; }
         }
 
+        private Familia familia;
+
         public Familia Familia
         {
             get
             {
-                throw new System.NotImplementedException();
+                return familia;
             }
             set
             {
+                familia = value;
+                Notificador("Familia");
             }
         }
+
+        private Categoria categoria;
 
         public Categoria Categoria
         {
             get
             {
-                throw new System.NotImplementedException();
+                return categoria;
             }
             set
             {
+                categoria = value;
+                Notificador("Categoria");
             }
         }
+
+        private Unidad_Medida unidad_medida;
 
         public Unidad_Medida Unidad_Medida
         {
             get
             {
-                throw new System.NotImplementedException();
+                return unidad_medida;
             }
             set
             {
+                unidad_medida = value;
+                Notificador("Unidad_Medida");
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void Notificador(string prop)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
+        }
+
+        // Nuevo constructor
+        public Articulo(string descripcion, Familia familia, Categoria categoria, Unidad_Medida unidad_medida, decimal precio)
+        {
+            Art_descrip = descripcion;
+            Familia = familia;
+            Categoria = categoria;
+            Unidad_Medida = unidad_medida;
+            Art_precio = precio;
+        }
+
+        public Articulo() { }
     }
 }

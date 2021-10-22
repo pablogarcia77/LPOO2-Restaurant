@@ -21,5 +21,11 @@ namespace ClasesBase
             get { return cat_descrip; }
             set { cat_descrip = value; }
         }
+
+        public Categoria(int id, string descripcion)
+        {
+            Cat_id = id;
+            Cat_descrip = descripcion;
+        }
     }
 }

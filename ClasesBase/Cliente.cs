@@ -61,19 +61,19 @@ namespace ClasesBase
             get
             {
                 string result = null;
-                if (columnName == "Id")
+                if (columnName == "Cli_id")
                 {
                     if (String.IsNullOrEmpty(cli_id.ToString()))
                         result = "Debe ingresar un Id";
                     else if (cli_id <= 0)
                         result = "El Id debe ser mayor a 0";
                 }
-                if (columnName == "Apellido")
+                if (columnName == "Cli_apellido")
                 {
                     if (String.IsNullOrEmpty(cli_apellido))
                         result = "Debe ingresar el Apellido";
                 }
-                if (columnName == "Nombre")
+                if (columnName == "Cli_nombre")
                 {
                     if (String.IsNullOrEmpty(cli_nombre))
                         result = "Debe ingresar el Nombre";

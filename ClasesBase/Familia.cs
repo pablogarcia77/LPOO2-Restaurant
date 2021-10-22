@@ -21,5 +21,11 @@ namespace ClasesBase
             get { return fam_descrip; }
             set { fam_descrip = value; }
         }
+
+        public Familia(int id, string descripcion)
+        {
+            Fam_id = id;
+            Fam_descrip = descripcion;
+        }
     }
 }

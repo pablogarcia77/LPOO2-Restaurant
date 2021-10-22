@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 
 namespace ClasesBase
 {
@@ -26,8 +27,23 @@ namespace ClasesBase
             return dt;
         }
 
-      
-      
+
+        public ObservableCollection<Articulo> TraerArticulosObs()
+        {
+            ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
+
+            Familia oFamilia = new Familia(1,"Familia 1");
+            Categoria oCategoria = new Categoria(2,"Categoria 2");
+            Categoria oCategoria2 = new Categoria(3, "Minutas");
+            Categoria oCategoria3 = new Categoria(4, "Bebidas");
+            Unidad_Medida oUM = new Unidad_Medida(3,"Kilos","Kg");
+
+            listaArticulo.Add(new Articulo("Pizza",oFamilia, oCategoria, oUM, 500));
+            listaArticulo.Add(new Articulo("Lomito", oFamilia, oCategoria2, oUM, 500));
+            listaArticulo.Add(new Articulo("Coca Cola", oFamilia, oCategoria3, oUM, 500));
+
+            return listaArticulo;
+        }
         
     }
 }
