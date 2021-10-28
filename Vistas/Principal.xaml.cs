@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using Vistas.Articulos;
+using Vistas.Ventas;
 
 namespace Vistas
 {
@@ -125,6 +126,8 @@ namespace Vistas
 
         private void btnListarArticulo_Click(object sender, RoutedEventArgs e)
         {
+            ListaArticulos oLA = new ListaArticulos();
+            oLA.Show();
         }
 
         private void btnMostrarArticulos_Click(object sender, RoutedEventArgs e)
@@ -144,6 +147,7 @@ namespace Vistas
 
         private void btnListarUsuarios_Click(object sender, RoutedEventArgs e)
         {
+            
         }
 
         private void btnClientes_Click(object sender, RoutedEventArgs e)
@@ -226,6 +230,8 @@ namespace Vistas
         }
         private void btnNuevaVenta_Click(object sender, RoutedEventArgs e)
         {
+            Pedidos oPedidos = new Pedidos();
+            oPedidos.Show();
         }
 
         private void btnMesas_Click(object sender, RoutedEventArgs e)

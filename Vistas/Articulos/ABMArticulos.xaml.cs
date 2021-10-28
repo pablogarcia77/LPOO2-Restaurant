@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+
 using ClasesBase;
 
 namespace Vistas.Articulos
@@ -20,16 +21,17 @@ namespace Vistas.Articulos
     /// </summary>
     public partial class ABMArticulos : Window
     {
+        CollectionView Vista;
+        ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
+
         public ABMArticulos()
         {
             InitializeComponent();
-        }
-
-        CollectionView Vista;
-        ObservableCollection<Articulo> listaArticulo;
+        }  
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             ObjectDataProvider odp = (ObjectDataProvider)this.Resources["Lista"];
             listaArticulo = odp.Data as ObservableCollection<Articulo>;
 
@@ -49,11 +51,25 @@ namespace Vistas.Articulos
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             Vista.MoveCurrentToPrevious();
+            if (Vista.IsCurrentBeforeFirst)
+            {
+                Vista.MoveCurrentToLast();
+            }
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
             Vista.MoveCurrentToNext();
+            if (Vista.IsCurrentAfterLast)
+            {
+                Vista.MoveCurrentToFirst();
+            }
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            ListaArticulos oLA = new ListaArticulos();
+            oLA.Show();
         }
     }
 }

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Vistas.Ventas.Pedidos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pedidos" Height="440" Width="460">
+    <Grid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="260,90,0,0" Name="txtPedido" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="260,120,0,0" Name="txtCliente" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="260,150,0,0" Name="txtArticulo" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="260,180,0,0" Name="txtCantidad" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="164,90,0,0" Name="txbPedido" Text="Número Pedido" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="164,120,0,0" Name="txbCliente" Text="Cliente" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="164,150,0,0" Name="txbArticulo" Text="Articulo" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="164,180,0,0" Name="txbCantidad" Text="Cantidad" VerticalAlignment="Top" />
+        <Button Content="Guardar" Height="23" HorizontalAlignment="Left" Margin="172,246,0,0" Name="btnGuardar" VerticalAlignment="Top" Width="160" />
+    </Grid>
+</Window>

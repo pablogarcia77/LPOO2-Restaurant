@@ -1,14 +1,3 @@
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\bin\Debug\ClasesBase.exe
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\bin\Debug\ClasesBase.pdb
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\MainWindow.baml
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\MainWindow.g.cs
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\App.g.cs
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase_MarkupCompile.cache
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.g.resources
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.Properties.Resources.resources
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.csproj.GenerateResource.Cache
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.exe
-C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.pdb
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\ClasesBase\bin\Debug\ClasesBase.exe
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\ClasesBase\obj\x86\Debug\MainWindow.baml
@@ -22,3 +11,14 @@ C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\ClasesBase\obj\x86\Debug\ClasesBase.pdb
 C:\Users\Mauro\Documents\Visual Studio 2010\Projects\LPO ll 2021\GrupoGit\LPOO2-Restaurant\ClasesBase\bin\Debug\ClasesBase.exe.config
 C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\bin\Debug\ClasesBase.exe.config
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\bin\Debug\ClasesBase.exe
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\MainWindow.baml
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\MainWindow.g.cs
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\App.g.cs
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase_MarkupCompile.cache
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.g.resources
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.Properties.Resources.resources
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.csproj.GenerateResource.Cache
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.exe
+C:\Users\pablo\onedrive\documentos\visual studio 2010\Projects\ClasesBase\ClasesBase\obj\x86\Debug\ClasesBase.pdb
