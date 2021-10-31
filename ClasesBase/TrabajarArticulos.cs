@@ -31,7 +31,7 @@ namespace ClasesBase
         public ObservableCollection<Articulo> TraerArticulosObs()
         {
             ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
-
+            /**
             Familia oFamilia = new Familia(2, "Productos Terminados");
             Familia oFamilia2 = new Familia(3, "Bebidas");
             Categoria oCategoria = new Categoria(3,"Desayunos");
@@ -43,8 +43,44 @@ namespace ClasesBase
             listaArticulo.Add(new Articulo("Pizza",oFamilia, oCategoria, oUM, 500));
             
             listaArticulo.Add(new Articulo("Coca Cola", oFamilia2, oCategoria3, oUM, 500));
-
+            **/
             return listaArticulo;
+        }
+
+        public static string TraerArticuloPorId(int id)
+        {
+            string articulo;
+
+            // Creamos la conexión
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.conexion);
+
+            // configurar el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT Art_Descrip FROM Articulo WHERE Art_Id=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            // configurar un adaptador
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // crear una tabla o conjunto de datos dataset
+            DataTable dt = new DataTable();
+
+            // llenar la tabla
+            da.Fill(dt);
+
+            if (dt.Rows.Count == 1)
+            {
+                articulo = dt.Rows[0][0].ToString();
+            }
+            else
+            {
+                articulo = "No se encontro";
+            }
+
+            return articulo;
         }
         
     }

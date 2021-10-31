@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using ClasesBase;
+using Vistas.Ventas;
 
 namespace Vistas
 {
@@ -20,6 +20,8 @@ namespace Vistas
     /// </summary>
     public partial class Mesas : Window
     {
+        public static int idMesa;
+
         public Mesas()
         {
             InitializeComponent();
@@ -81,7 +83,10 @@ namespace Vistas
             Button button = sender as Button;
             if (button.Background == Brushes.Green)
             {
-                MessageBox.Show("Mesa libre");
+                idMesa = Convert.ToInt32(button.Content.ToString());
+                //MessageBox.Show(button.Content.ToString());
+                Pedidos oPedidos = new Pedidos();
+                oPedidos.Show();
             }
             else
             {

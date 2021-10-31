@@ -230,8 +230,8 @@ namespace Vistas
         }
         private void btnNuevaVenta_Click(object sender, RoutedEventArgs e)
         {
-            Pedidos oPedidos = new Pedidos();
-            oPedidos.Show();
+            //Pedidos oPedidos = new Pedidos();
+            //oPedidos.Show();
         }
 
         private void btnMesas_Click(object sender, RoutedEventArgs e)

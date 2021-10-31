@@ -71,6 +71,7 @@
     <Compile Include="Categoria\NuevaCategoria.xaml.cs">
       <DependentUpon>NuevaCategoria.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Conversores\ConversorArticulo.cs" />
     <Compile Include="Conversores\ConversorDeEstados.cs" />
     <Compile Include="Familia\NuevaFamilia.xaml.cs">
       <DependentUpon>NuevaFamilia.xaml</DependentUpon>
