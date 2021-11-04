@@ -37,6 +37,15 @@ namespace ClasesBase
             get { return um_id; }
             set { um_id = value; }
         }
+
+        private string art_img_uri;
+
+        public string Art_img_uri
+        {
+            get { return art_img_uri; }
+            set { art_img_uri = value; }
+        }
+
         private decimal art_precio;
 
         public decimal Art_precio
@@ -98,6 +107,7 @@ namespace ClasesBase
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        private System.Data.DataTable dataTable;
 
         public void Notificador(string prop)
         {
@@ -108,8 +118,9 @@ namespace ClasesBase
         }
 
         // Nuevo constructor
-        public Articulo(string descripcion, Familia familia, Categoria categoria, Unidad_Medida unidad_medida, decimal precio)
+        public Articulo(int id, string descripcion, Familia familia, Categoria categoria, Unidad_Medida unidad_medida, decimal precio)
         {
+            Art_id = id;
             Art_descrip = descripcion;
             Familia = familia;
             Categoria = categoria;
@@ -119,6 +130,10 @@ namespace ClasesBase
 
         public Articulo() { }
 
-
+        public Articulo(System.Data.DataTable dataTable)
+        {
+            // TODO: Complete member initialization
+            this.dataTable = dataTable;
+        }
     }
 }

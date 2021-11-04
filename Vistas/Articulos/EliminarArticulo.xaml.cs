@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using ClasesBase;
+using System.Collections.ObjectModel;
 
 namespace Vistas
 {
@@ -20,9 +21,13 @@ namespace Vistas
     /// </summary>
     public partial class EliminarArticulo : Window
     {
+        //CollectionView Vista;
+        //  ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
+
         public EliminarArticulo()
         {
             InitializeComponent();
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -32,7 +37,17 @@ namespace Vistas
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
+            // TrabajarArticulos.eliminarArticuloObs(idEliminarArticulo);
+            //  MessageBox.Show("Articulo Eliminado Correctamente"+idEliminarArticulo);
 
+
+            // TrabajarArticulos.eliminarArticuloObs();
+            // ObjectDataProvider odp = (ObjectDataProvider)this.Resources["Lista"];
+            // listaArticulo = odp.Data as ObservableCollection<Articulo>;
+
+            // Vista = (CollectionView)CollectionViewSource.GetDefaultView(Grid_content.DataContext);
+
+            /*
             Articulo oArticulo1 = new Articulo();
 
             oArticulo1.Art_id = 1;
@@ -52,6 +67,7 @@ namespace Vistas
             {
                 MessageBox.Show("El codigo no coincide con ningun articulo");
             }
+             * */
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

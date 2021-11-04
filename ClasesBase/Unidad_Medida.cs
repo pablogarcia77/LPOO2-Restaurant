@@ -29,11 +29,16 @@ namespace ClasesBase
             set { um_abrev = value; }
         }
 
-        public Unidad_Medida(int id, string descripcion, string abreviacion) 
+        public Unidad_Medida(int id, string descripcion, string abreviacion)
         {
             Um_id = id;
             Um_descrip = descripcion;
             Um_abrev = abreviacion;
+        }
+
+        public Unidad_Medida()
+        {
+
         }
     }
 }

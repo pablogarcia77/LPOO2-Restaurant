@@ -10,8 +10,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Data;
+using System.Globalization;
 using Vistas.Ventas;
+using ClasesBase;
+
+using Vistas.Conversores;
+using Vistas.Impresiones;
 
 namespace Vistas
 {
@@ -27,13 +32,55 @@ namespace Vistas
             InitializeComponent();
         }
 
+        private Brush convertString(string color)
+        {
+            if (color == "Libre")
+            {
+                return new SolidColorBrush(Colors.Green);
+            }
+            else if (color == "Reservada")
+            {
+                return new SolidColorBrush(Colors.Chocolate);
+            }
+            else if (color == "Ocupada")
+            {
+                return new SolidColorBrush(Colors.Red);
+            }
+            else if (color == "Pidiendo")
+            {
+                return new SolidColorBrush(Colors.Purple);
+            }
+            else if (color == "En espera de comida")
+            {
+                return new SolidColorBrush(Colors.PaleGreen);
+            }
+            else if (color == "Servidos")
+            {
+                return new SolidColorBrush(Colors.Coral);
+            }
+            else if (color == "Esperando cuenta")
+            {
+                return new SolidColorBrush(Colors.LightBlue);
+            }
+            else if (color == "Pagando")
+            {
+                return new SolidColorBrush(Colors.YellowGreen);
+            }
+            else
+            {
+                return new SolidColorBrush(Colors.Wheat);
+            }
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            ConversorDeEstados ce = new ConversorDeEstados();
 
             int left = 25;
             int top = 15;
+            DataTable mesas = TrabajarMesa.TotalMesas();
 
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= mesas.Rows.Count; i++)
             {
                 //Create new button element
                 Button oBtn = new Button();
@@ -41,7 +88,7 @@ namespace Vistas
                 oBtn.Name = "button" + i.ToString();
                 oBtn.Content = i.ToString();
                 //Set background color & click event
-                oBtn.Background = Brushes.Green;
+                oBtn.Background = convertString(mesas.Rows[i-1]["Mesa_Estado"].ToString());
                 oBtn.Click += new RoutedEventHandler(CheckLibre);
                 //Set width, height & VHAlign
                 oBtn.Height = 55;
@@ -67,11 +114,12 @@ namespace Vistas
                 {
                     left = 25;
                 }
+
                 //Disabled 11th & 17th Table (BgColor red)
-                if (i == 11 || i == 17)
-                {
-                    oBtn.Background = Brushes.Red;
-                }
+                //if (i == 11 || i == 17)
+                //{
+                //    oBtn.Background = Brushes.Red;
+                //}
                 //Add button to grid
                 Grilla.Children.Add(oBtn);
             }
@@ -81,17 +129,23 @@ namespace Vistas
         private void CheckLibre(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            if (button.Background == Brushes.Green)
+            idMesa = Convert.ToInt32(button.Content.ToString());
+            Mesa oMesa = new Mesa();
+            oMesa = TrabajarMesa.TraerMesaPorId(idMesa);
+            //MessageBox.Show(button.GetBindingExpression(BackgroundProperty).DataItem.ToString());
+            if (oMesa.Mesa_estado == "Libre")
             {
-                idMesa = Convert.ToInt32(button.Content.ToString());
                 //MessageBox.Show(button.Content.ToString());
                 Pedidos oPedidos = new Pedidos();
                 oPedidos.Show();
             }
-            else
+            if(oMesa.Mesa_estado == "En espera de comida")
             {
-                MessageBox.Show("Mesa ocupada");
+                Pedidos.idMesa = idMesa;
+                ImpresionPedidos oImpP = new ImpresionPedidos();
+                oImpP.Show();
             }
         }
+
     }
 }

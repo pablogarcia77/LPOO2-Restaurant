@@ -1,17 +1,17 @@
 ﻿<Window x:Class="Vistas.Impresiones.VistaPreviaArticulos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:data="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:data="clr-namespace:Vistas.Impresiones"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         Title="Vista previa de impresión" Height="344" Width="686">
     <Window.Resources>
-        <ObjectDataProvider
+       <ObjectDataProvider
             x:Key="Lista"
-            ObjectType="{x:Type data:TrabajarArticulos}"
-            MethodName="TraerArticulosObs"
+            ObjectType="{x:Type data:VistaPreviaArticulos}"
+            MethodName="RenderLista"
         />
         
-        <CollectionViewSource x:Key="View_Lista_Articulos" Source="{StaticResource ResourceKey=Lista}">
+        <CollectionViewSource x:Key="Vista_Articulos" Source="{StaticResource ResourceKey=Lista}">
             <CollectionViewSource.SortDescriptions>
                 <scm:SortDescription PropertyName="Art_descrip" Direction="Ascending" />
             </CollectionViewSource.SortDescriptions>
@@ -21,7 +21,7 @@
         <FlowDocumentReader Height="238">
             <FlowDocument Name="DocMain">
                 <BlockUIContainer>
-                    <ListView ItemsSource="{Binding Source={StaticResource ResourceKey=View_Lista_Articulos}}">
+                    <ListView ItemsSource="{Binding Source={StaticResource ResourceKey=Vista_Articulos}}">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>

@@ -1,8 +1,18 @@
 ﻿<Window x:Class="Vistas.EliminarArticulo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Eliminar Articulo" Height="165" Width="342" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
-    <Grid Height="121">
+        Title="Eliminar Articulo" Height="165" Width="342" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+        xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase">
+    <!---
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="Lista"
+            ObjectType="{x:Type svc:TrabajarArticulos}"
+            MethodName="eliminarArticuloObs">
+        </ObjectDataProvider>
+    </Window.Resources>
+    -->
+    <Grid Name="Grid_content" Height="121">
         <Label Content="Ingrese Codigo" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblCodigo" VerticalAlignment="Top" Width="110" />
         <TextBox Height="28" HorizontalAlignment="Left" Margin="142,12,0,0" Name="txtCodigo" VerticalAlignment="Top" Width="147" />
         <Button Content="Eliminar" Height="32" HorizontalAlignment="Left" Margin="12,77,0,0" Name="btnEliminar" VerticalAlignment="Top" Width="125" Click="btnEliminar_Click" />

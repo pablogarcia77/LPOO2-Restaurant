@@ -67,6 +67,9 @@
     <Compile Include="TrabajarArticulos.cs" />
     <Compile Include="TrabajarCliente.cs" />
     <Compile Include="TrabajarItemsPedido.cs" />
+    <Compile Include="TrabajarMesa.cs" />
+    <Compile Include="TrabajarPedidos.cs" />
+    <Compile Include="TrabajarUsuarios.cs" />
     <Compile Include="Unidad_Medida.cs" />
     <Compile Include="Usuario.cs" />
     <Page Include="MainWindow.xaml">

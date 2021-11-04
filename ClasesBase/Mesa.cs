@@ -21,9 +21,9 @@ namespace ClasesBase
             get { return mesa_posicion; }
             set { mesa_posicion = value; }
         }
-        private int mesa_estado;
+        private string mesa_estado;
 
-        public int Mesa_estado
+        public string Mesa_estado
         {
             get { return mesa_estado; }
             set { mesa_estado = value; }

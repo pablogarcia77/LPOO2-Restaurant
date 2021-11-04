@@ -31,14 +31,24 @@ namespace Vistas
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            //agregado
             Articulo oArticulo = new Articulo();
+
             oArticulo.Art_id = Convert.ToInt32(txtCodigo.Text);
+
             oArticulo.Art_descrip = txtdescrip.Text;
+
             oArticulo.Fam_id = Convert.ToInt32(txtFamilia.Text);
-            oArticulo.Art_precio = Convert.ToDecimal(txtPrecio.Text);
+
             oArticulo.Um_id = Convert.ToInt32(txtUM.Text);
+
+            oArticulo.Art_precio = Convert.ToDecimal(txtPrecio.Text);
+
+
+
             oArticulo.Art_maneja_stock = true;
 
+            TrabajarArticulos.nuevoArticuloObs(oArticulo);
             MessageBox.Show("Articulo Agregado Correctamente");
             MessageBox.Show("Codigo: " + oArticulo.Art_id + ", Descripcion: " + oArticulo.Art_descrip +
                 ", Familia: " + oArticulo.Fam_id + ", Precio: " + oArticulo.Art_precio + " Unidad de medida: " +

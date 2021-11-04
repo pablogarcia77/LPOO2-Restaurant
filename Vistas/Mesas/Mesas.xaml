@@ -13,6 +13,13 @@
                     FontWeight="Bold"/>
             </StackPanel>
         </DataTemplate>
+        <DataTemplate x:Key="MesasDT">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Mesa_Id}"></TextBlock>
+                <TextBlock> - </TextBlock>
+                <TextBlock Text="{Binding Path=Mesa_Estado}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
     </Window.Resources>
     
     <Grid x:Name="Grilla">
@@ -26,7 +33,5 @@
         <StackPanel Height="30" Width="100"
                 Background="{Binding ElementName=listBox1, Path=SelectedValue, Converter={StaticResource ConvertColores}}" Margin="776,250,12,198">
         </StackPanel>
-
-
     </Grid>
 </Window>

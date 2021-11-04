@@ -51,7 +51,7 @@ namespace Vistas.Articulos
 
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
-            VistaPreviaArticulos oVPA = new VistaPreviaArticulos();
+            VistaPreviaArticulos oVPA = new VistaPreviaArticulos(vistaColeccionFiltrada);
             oVPA.Show();
         }
 

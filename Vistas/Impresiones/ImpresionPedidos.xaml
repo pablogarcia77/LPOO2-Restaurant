@@ -1,29 +1,41 @@
 ﻿<Window x:Class="Vistas.Impresiones.ImpresionPedidos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ImpresionPedidos" Height="458" Width="549">
-    <!--
+        Title="ImpresionPedidos" Height="458" Width="549" Loaded="Window_Loaded">
+    
     <FixedDocument>
         <PageContent>
             <FixedPage>
-    -->
-    <Grid>
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="330,12,0,0" Name="textBlock1" Text="PEDIDO" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="329,48,0,0" Name="textBlock2" Text="Número:" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="412,48,0,0" Name="textBlock3" Text="TextBlock" VerticalAlignment="Top" />
+
+                <Grid>
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="330,12,0,0" Name="textBlock1" Text="PEDIDO" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="329,48,0,0" Name="textBlock2" Text="Número:" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="329,77,0,0" Name="textBlock4" Text="Fecha y Hora:" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="412,77,0,0" Name="textBlock5" Text="TextBlock" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="50,114,0,0" Name="textBlock6" Text="MESA N°" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="298,114,0,0" Name="textBlock7" Text="MOZO:" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="104,114,0,0" Name="textBlock8" Text="TextBlock" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="351,114,0,0" Name="textBlock9" Text="TextBlock" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="100,177,0,0" Name="textBlock10" Text="Cantidad" VerticalAlignment="Top" Width="84" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="296,177,0,0" Name="textBlock11" Text="Descripción" VerticalAlignment="Top" Width="76" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="412,77,0,0" Name="txbFechaPedido" Text="TextBlock" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="32,140,0,0" Name="textBlock6" Text="MESA N°" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="298,140,0,0" Name="textBlock7" Text="MOZO:" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="86,140,0,0" Name="txbMesa" Text="TextBlock" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="351,140,0,0" Name="txbMozo" Text="TextBlock" VerticalAlignment="Top" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="223,177,0,0" Name="textBlock10" Text="Cantidad" VerticalAlignment="Top" Width="84" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="20,177,0,0" Name="textBlock11" Text="Descripción" VerticalAlignment="Top" Width="76" />
+                    <StackPanel Height="156" HorizontalAlignment="Left" Margin="223,206,0,0" x:Name="stackCantidad" VerticalAlignment="Top" Width="53" />
+                    <StackPanel Height="156" HorizontalAlignment="Left" Margin="20,206,0,0" x:Name="stackDescripcion" VerticalAlignment="Top" Width="191" />
+        <TextBlock Height="40" HorizontalAlignment="Left" Margin="20,12,0,0" Name="textBlock3" Text="Sabores del Norte" VerticalAlignment="Top" FontSize="24" Width="209" FontWeight="Bold" />
+        <TextBlock Height="23" Margin="20,48,365,0" Name="textBlock5" Text="Restaurant &amp; Coffe" VerticalAlignment="Top" FontWeight="Bold" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="20,77,0,0" Name="textBlock8" Text="Alverro 324" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="117,77,0,0" Name="textBlock9" Text="CUIT: 30-98765432-4" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="20,97,0,0" Name="textBlock12" Text="Tilcara" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="117,97,0,0" Name="textBlock13" Text="IIBB: C-156" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="298,177,0,0" Name="textBlock14" Text="Precio" VerticalAlignment="Top" />
+        <StackPanel Height="156" HorizontalAlignment="Left" Margin="290,206,0,0" Name="stackPrecio" VerticalAlignment="Top" Width="68" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="248,384,0,0" Name="txbTotalLbl" Text="Total:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="290,384,0,0" Name="txbTotal" Text="TextBlock" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="381,48,0,0" Name="txbNroPedido" Text="TextBlock" VerticalAlignment="Top" />
     </Grid>
 
-    <!--
+
             </FixedPage>
         </PageContent>
     </FixedDocument>
-    -->
+
 </Window>

@@ -11,14 +11,14 @@
         </ObjectDataProvider>
     </Window.Resources>
     <Grid Name="Grid_content" DataContext="{Binding Source={StaticResource ResourceKey=Lista}}">
-        <Button Content="Nuevo" Height="23" HorizontalAlignment="Left" Margin="35,34,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
-        <Button Content="Modificar" Height="23" HorizontalAlignment="Left" Margin="115,34,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
-        <Button Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="195,34,0,0" Name="button3" VerticalAlignment="Top" Width="75" />
+        <Button Content="Nuevo" Height="23" HorizontalAlignment="Left" Margin="35,34,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <Button Content="Modificar" Height="23" HorizontalAlignment="Left" Margin="115,34,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+        <Button Content="Eliminar" Height="23" HorizontalAlignment="Left" Margin="195,34,0,0" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click" />
         <Button Content="|&lt;" Height="23" HorizontalAlignment="Left" Margin="338,34,0,0" Name="button4" VerticalAlignment="Top" Width="45" Click="button4_Click" />
         <Button Content="&lt;" Height="23" HorizontalAlignment="Left" Margin="388,34,0,0" Name="button5" VerticalAlignment="Top" Width="45" Click="button5_Click" />
         <Button Content="&gt;" Height="23" HorizontalAlignment="Right" Margin="0,34,143,0" Name="button6" VerticalAlignment="Top" Width="45" Click="button6_Click" />
         <Button Content="&gt;|" Height="23" HorizontalAlignment="Left" Margin="488,34,0,0" Name="button7" VerticalAlignment="Top" Width="45" Click="button7_Click" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="338,63,0,0" Name="textBox1" VerticalAlignment="Top" Width="195" Text="{Binding Art_id}"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="338,63,0,0" Name="textBox1" VerticalAlignment="Top" Width="195" Text="{Binding Art_id}"  DataContext="{Binding}"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="338,93,0,0" Name="textBox2" VerticalAlignment="Top" Width="195" Text="{Binding Art_descrip}"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="338,123,0,0" Name="textBox3" VerticalAlignment="Top" Width="195" Text="{Binding Familia.Fam_descrip}"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="338,153,0,0" Name="textBox4" VerticalAlignment="Top" Width="195" Text="{Binding Categoria.Cat_descrip}"/>

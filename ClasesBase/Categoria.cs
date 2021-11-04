@@ -27,5 +27,10 @@ namespace ClasesBase
             Cat_id = id;
             Cat_descrip = descripcion;
         }
+
+        public Categoria()
+        {
+
+        }
     }
 }

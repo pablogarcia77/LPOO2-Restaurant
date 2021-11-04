@@ -21,8 +21,10 @@ namespace Vistas.Articulos
     /// </summary>
     public partial class ABMArticulos : Window
     {
+        public static int id;
         CollectionView Vista;
         ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
+        int idEliminarArticulo;
 
         public ABMArticulos()
         {
@@ -70,6 +72,34 @@ namespace Vistas.Articulos
         {
             ListaArticulos oLA = new ListaArticulos();
             oLA.Show();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            //agregado
+            NuevoArticulo ventana = new NuevoArticulo();
+            ventana.Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            //agregado
+            id = Convert.ToInt32(textBox1.Text);
+            ModificarArticulo ventana = new ModificarArticulo();
+            ventana.Show();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            //agregado
+            idEliminarArticulo = Convert.ToInt32(textBox1.Text);
+            if (MessageBox.Show("Desea eliminar el articulo", "Eliminar Articulo", MessageBoxButton.YesNo, MessageBoxImage.Error) == MessageBoxResult.Yes)
+            {
+                TrabajarArticulos.eliminarArticuloObs(idEliminarArticulo);
+                MessageBox.Show("Se elimino el Articulo correctamente");
+                TrabajarArticulos.TraerArticulosObs();
+                this.Hide();
+            }
         }
     }
 }

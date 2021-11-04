@@ -18,6 +18,8 @@ namespace Vistas.Impresiones
     /// </summary>
     public partial class VistaPreviaArticulos : Window
     {
+        private CollectionViewSource vistaColeccionFiltrada;
+
         public VistaPreviaArticulos()
         {
             InitializeComponent();
@@ -31,6 +33,16 @@ namespace Vistas.Impresiones
             {
                 pdlg.PrintDocument(((IDocumentPaginatorSource)DocMain).DocumentPaginator, "Imprimir");
             }
+        }
+
+        public VistaPreviaArticulos(CollectionViewSource lista)
+        {
+            vistaColeccionFiltrada = lista;
+        }
+
+        public CollectionViewSource RenderLista()
+        {
+            return vistaColeccionFiltrada;
         }
     }
 }

@@ -11,15 +11,16 @@ namespace ClasesBase
     public class TrabajarArticulos
     {
         public static DataTable TraerArticulos()
-        {   
+        {
             //Coneccion
             SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
             //Consulta Sql
-            SqlCommand consulta = new SqlCommand("Select Art_Id,Art_Descrip,Fam_Id,UM_Id,Art_Precio From Articulo");
+            // ,Fam_Id,UM_Id,Art_Precio
+            SqlCommand consulta = new SqlCommand("Select Art_Id,Art_Descrip,Art_Precio From Articulo");
             //Conectar la bd con la consulta SQL
             consulta.Connection = cn;
             //Enlace Adaptador de la consulta Sql
-            SqlDataAdapter da =new SqlDataAdapter(consulta);
+            SqlDataAdapter da = new SqlDataAdapter(consulta);
             //Creamos un Objeto Datatable
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -28,22 +29,33 @@ namespace ClasesBase
         }
 
 
-        public ObservableCollection<Articulo> TraerArticulosObs()
+        public static ObservableCollection<Articulo> TraerArticulosObs()
         {
             ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
-            /**
-            Familia oFamilia = new Familia(2, "Productos Terminados");
-            Familia oFamilia2 = new Familia(3, "Bebidas");
-            Categoria oCategoria = new Categoria(3,"Desayunos");
-            Categoria oCategoria2 = new Categoria(2, "Minutas");
-            Categoria oCategoria3 = new Categoria(1, "Menu");
-            Unidad_Medida oUM = new Unidad_Medida(1,"Kilos","Kg");
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
+            //SqlCommand consultaSql = new SqlCommand("SELECT dbo.Articulo.Art_Id, dbo.Articulo.Art_Descrip, dbo.Familia.Fam_Descrip, dbo.Categorias.Cat_Descrip, dbo.Unidad_Medida.UM_Descrip, dbo.Articulo.Art_Precio FROM dbo.Articulo CROSS JOIN   dbo.Categorias CROSS JOIN  dbo.Familia CROSS JOIN  dbo.Unidad_Medida");
+            SqlCommand consultaSql = new SqlCommand("SELECT dbo.Articulo.Art_Id, dbo.Articulo.Art_Descrip, dbo.Familia.Fam_Descrip, dbo.Categorias.Cat_Descrip, dbo.Unidad_Medida.UM_Descrip, dbo.Articulo.Art_Precio FROM dbo.Articulo LEFT JOIN dbo.Categorias ON (dbo.Categorias.Cat_Id = dbo.Articulo.Cat_Id) LEFT JOIN dbo.Familia ON (dbo.Familia.Fam_Id = dbo.Articulo.Fam_Id) LEFT JOIN dbo.Unidad_Medida ON (dbo.Unidad_Medida.UM_Id = dbo.Articulo.UM_Id)");
+            //SqlCommand consultaSql = new SqlCommand("SELECT a.Art_Id, a.Art_Descrip, f.Fam_Descrip, c.Cat_Descrip, um.UM_Descrip, a.Art_Precio FROM Articulo a, Categorias c, Familia f, Unidad_Medida um WHERE a.Fam_Id=f.Fam_Id AND a.UM_Id=um.UM_Id AND a.Cat_Id=c.Cat_Id");
+            consultaSql.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(consultaSql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-            listaArticulo.Add(new Articulo("Lomito", oFamilia, oCategoria2, oUM, 500));
-            listaArticulo.Add(new Articulo("Pizza",oFamilia, oCategoria, oUM, 500));
-            
-            listaArticulo.Add(new Articulo("Coca Cola", oFamilia2, oCategoria3, oUM, 500));
-            **/
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Articulo articuloBD = new Articulo();
+                Familia familia = new Familia();
+                Categoria categoria = new Categoria();
+                Unidad_Medida unidad_Medida = new Unidad_Medida();
+                articuloBD.Art_id = Convert.ToInt32(dt.Rows[i][0]);
+                articuloBD.Art_descrip = Convert.ToString(dt.Rows[i][1]);
+                familia.Fam_descrip = Convert.ToString(dt.Rows[i][2]);
+                categoria.Cat_descrip = Convert.ToString(dt.Rows[i][3]);
+                unidad_Medida.Um_descrip = Convert.ToString(dt.Rows[i][4]);
+                articuloBD.Art_precio = Convert.ToDecimal(dt.Rows[i][5]);
+                listaArticulo.Add(new Articulo(articuloBD.Art_id, articuloBD.Art_descrip, familia, categoria, unidad_Medida, articuloBD.Art_precio));
+
+            }
             return listaArticulo;
         }
 
@@ -81,6 +93,75 @@ namespace ClasesBase
             }
 
             return articulo;
+        }
+
+        public static Articulo obtenerUnArticulo(int id)
+        {
+            Articulo articulo = new Articulo();
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
+            SqlCommand consultaSql = new SqlCommand("Select * from Articulo where Art_Id=@id");
+            consultaSql.Connection = cn;
+            consultaSql.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter da = new SqlDataAdapter(consultaSql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows[0][0] != null)
+            {
+                articulo.Art_id = Convert.ToInt32(dt.Rows[0][0]);
+                articulo.Art_descrip = Convert.ToString(dt.Rows[0][1]);
+                articulo.Fam_id = Convert.ToInt32(dt.Rows[0][2]);
+                articulo.Um_id = Convert.ToInt32(dt.Rows[0][3]);
+                articulo.Art_precio = Convert.ToDecimal(dt.Rows[0][4]);
+                articulo.Art_maneja_stock = Convert.ToBoolean(dt.Rows[0][5]);
+            }
+
+
+            return articulo;
+        }
+
+        public static void nuevoArticuloObs(Articulo nuevoArticulo)
+        {
+
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
+            SqlCommand consultaSQL = new SqlCommand("Insert Into Articulo (Art_id,Art_Descrip,Fam_Id,UM_Id,Art_Precio,Art_Maneja_Stock) values (@id,@d,@f,@u,@p,@s)");
+            consultaSQL.Connection = cn;
+            consultaSQL.Parameters.AddWithValue("@id", nuevoArticulo.Art_id);
+            consultaSQL.Parameters.AddWithValue("@d", nuevoArticulo.Art_descrip);
+            consultaSQL.Parameters.AddWithValue("@f", nuevoArticulo.Fam_id);
+            consultaSQL.Parameters.AddWithValue("@p", nuevoArticulo.Art_precio);
+            consultaSQL.Parameters.AddWithValue("@u", nuevoArticulo.Um_id);
+
+            consultaSQL.Parameters.AddWithValue("@s", nuevoArticulo.Art_maneja_stock);
+            cn.Open();
+            consultaSQL.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public static void modificarArticuloObs(Articulo modificarArticulo)
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
+            SqlCommand consultaSql = new SqlCommand("Update Articulo Set Art_Descrip=@d,Fam_Id=@f,UM_Id=@u,Art_Precio=@p where Art_Id=@id");
+            consultaSql.Connection = cn;
+
+            consultaSql.Parameters.AddWithValue("@id", modificarArticulo.Art_id);
+            consultaSql.Parameters.AddWithValue("@d", modificarArticulo.Art_descrip);
+            consultaSql.Parameters.AddWithValue("@f", modificarArticulo.Fam_id);
+            consultaSql.Parameters.AddWithValue("@u", modificarArticulo.Um_id);
+            consultaSql.Parameters.AddWithValue("@p", modificarArticulo.Art_precio);
+            cn.Open();
+            consultaSql.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public static void eliminarArticuloObs(int id)
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
+            SqlCommand consultaSQL = new SqlCommand("Delete From Articulo where Art_Id = @id");
+            consultaSQL.Connection = cn;
+            consultaSQL.Parameters.AddWithValue("@id", id);
+            cn.Open();
+            consultaSQL.ExecuteNonQuery();
+            cn.Close();
         }
         
     }
