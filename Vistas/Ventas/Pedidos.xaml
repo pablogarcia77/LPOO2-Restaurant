@@ -1,15 +1,17 @@
-﻿<Window x:Class="Vistas.Ventas.Pedidos"
+﻿<Page x:Class="Vistas.Ventas.Pedidos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:data="clr-namespace:ClasesBase;assembly=ClasesBase"
         xmlns:convert="clr-namespace:Vistas.Conversores"
-        Title="Pedidos" Height="407" Width="757" Loaded="Window_Loaded">
-    <Window.Resources>
+        Title="Pedidos" Height="407" Width="537" Loaded="Window_Loaded">
+    <Page.Resources>
         <convert:ConversorArticulo x:Key="ConvertArticulo" />
         <ObjectDataProvider x:Key="ListaItemsPedido" ObjectType="{x:Type data:TrabajarItemsPedido}" MethodName="TraerItemsPedido">
         </ObjectDataProvider>
         <DataTemplate x:Key="ItemsDT">
+            <!--
             <StackPanel Orientation="Horizontal">
+                
                 <TextBlock Text="{Binding Path=Art_id, Converter={StaticResource ConvertArticulo}, ConverterParameter=true}"></TextBlock>
                 <TextBlock> - PU: $</TextBlock>
                 <TextBlock Text="{Binding Path=Precio}"></TextBlock>
@@ -17,28 +19,59 @@
                 <TextBlock Text="{Binding Path=Cantidad}"></TextBlock>
                 <TextBlock> - Total: $</TextBlock>
                 <TextBlock Text="{Binding Path=Importe}"></TextBlock>
+                
             </StackPanel>
+            -->
         </DataTemplate>
-    </Window.Resources>
+    </Page.Resources>
     <Grid>
-       
-        <ListBox  ItemsSource="{Binding Source={StaticResource ResourceKey=ListaItemsPedido}}" ItemTemplate="{StaticResource ResourceKey=ItemsDT}"
-            Canvas.Left="192" Canvas.Top="14" Name="listBox2" Margin="114,149,355,120" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="260,120,0,0" VerticalAlignment="Top" Width="120" x:Name="cboCliente" DisplayMemberPath="Cli_Apellido" SelectedValuePath="Cli_Id" SelectionChanged="cboCliente_SelectionChanged" />
+
+        <ListView  ItemsSource="{Binding Source={StaticResource ResourceKey=ListaItemsPedido}}" 
+            Canvas.Left="192" Canvas.Top="14" Name="listBox2" Margin="280,140,19,76">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Articulo" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Art_id, Converter={StaticResource ConvertArticulo}, ConverterParameter=true}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Cantidad" Width="60">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Cantidad}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Total" Width="60">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Importe}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="81,77,0,0" VerticalAlignment="Top" Width="171" x:Name="cboCliente" DisplayMemberPath="Cli_Apellido" SelectedValuePath="Cli_Id" SelectionChanged="cboCliente_SelectionChanged" />
         
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="539,90,0,0" VerticalAlignment="Top" Width="120" x:Name="cboArticulo" DisplayMemberPath="Art_Descrip" SelectedValuePath="Art_Id" SelectionChanged="cboArticulo_SelectionChanged" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="539,120,0,0" Name="txtCantidad" VerticalAlignment="Top" Width="120" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="164,120,0,0" Name="txbCliente" Text="Cliente" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="461,90,0,0" Name="txbArticulo" Text="Articulo" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="461,121,0,0" Name="txbCantidad" Text="Cantidad" VerticalAlignment="Top" />
-        <Button Content="Confirmar Pedido" Height="23" HorizontalAlignment="Left" Margin="172,318,0,0" Name="btnGuardar" VerticalAlignment="Top" Width="208" Click="btnGuardar_Click"/>
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="69,32,0,0" Name="txtMesa" Text="Número de Mesa:" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="172,32,0,0" Name="txtNroMesa" Text="TextBlock" VerticalAlignment="Top" />
-        <Button Content="Agregar" Height="23" HorizontalAlignment="Left" Margin="539,185,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="120" Click="btnAgregar_Click" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="20,189,0,0" Name="textBlock1" Text="Items del Pedido" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="539,149,0,0" Name="txtPrecio" Text="{Binding ElementName=cboArticulo, Path=SelectedItem.Art_Precio}" VerticalAlignment="Top" Width="120" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="461,149,0,0" Name="textBlock2" Text="Precio" VerticalAlignment="Top" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="260,255,0,0" Name="txtComensales" VerticalAlignment="Top" Width="120" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="164,255,0,0" Name="txbComensales" Text="Comensales" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="81,140,0,0" VerticalAlignment="Top" Width="171" x:Name="cboArticulo" DisplayMemberPath="Art_Descrip" SelectedValuePath="Art_Id" SelectionChanged="cboArticulo_SelectionChanged" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="81,170,0,0" Name="txtCantidad" VerticalAlignment="Top" Width="171" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,79,0,0" Name="txbCliente" Text="Cliente" VerticalAlignment="Top" Foreground="White" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,140,0,0" Name="txbArticulo" Text="Articulo" VerticalAlignment="Top" Foreground="White" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,170,0,0" Name="txbCantidad" Text="Cantidad" VerticalAlignment="Top" Foreground="White" />
+        <Button Content="Confirmar Pedido" Height="32" HorizontalAlignment="Left" Margin="280,337,0,0" Name="btnGuardar" VerticalAlignment="Top" Width="238" Click="btnGuardar_Click"/>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="280,23,0,0" Name="txtMesa" Text="Número de Mesa:" VerticalAlignment="Top" Foreground="White" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="383,23,0,0" Name="txtNroMesa" Text="TextBlock" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" />
+        <Button Content="Agregar" Height="23" HorizontalAlignment="Left" Margin="81,235,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="171" Click="btnAgregar_Click" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="280,116,0,0" Name="textBlock1" Text="Items del Pedido" VerticalAlignment="Top" Foreground="White" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="81,199,0,0" Name="txtPrecio" Text="{Binding ElementName=cboArticulo, Path=SelectedItem.Art_Precio}" VerticalAlignment="Top" Width="171" Foreground="White" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,199,0,0" Name="textBlock2" Text="Precio" VerticalAlignment="Top" Foreground="White" />
+        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,77,19,0" Name="txtComensales" VerticalAlignment="Top" Width="89" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="360,79,0,0" Name="txbComensales" Text="Comensales" VerticalAlignment="Top" Foreground="White" />
+        <TextBlock Height="39" HorizontalAlignment="Left" Margin="12,12,0,0" Name="txbTitulo" Text="Nuevo Pedido" VerticalAlignment="Top" Width="189" FontSize="26" FontWeight="Bold" Foreground="White" />
     </Grid>
-</Window>
+</Page>

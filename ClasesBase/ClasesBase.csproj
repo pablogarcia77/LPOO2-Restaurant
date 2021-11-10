@@ -65,10 +65,14 @@
     <Compile Include="Pedido.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="TrabajarArticulos.cs" />
+    <Compile Include="TrabajarCaja.cs" />
+    <Compile Include="TrabajarCategorias.cs" />
     <Compile Include="TrabajarCliente.cs" />
+    <Compile Include="TrabajarFamilias.cs" />
     <Compile Include="TrabajarItemsPedido.cs" />
     <Compile Include="TrabajarMesa.cs" />
     <Compile Include="TrabajarPedidos.cs" />
+    <Compile Include="TrabajarUnidadMedida.cs" />
     <Compile Include="TrabajarUsuarios.cs" />
     <Compile Include="Unidad_Medida.cs" />
     <Compile Include="Usuario.cs" />

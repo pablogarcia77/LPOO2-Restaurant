@@ -19,7 +19,7 @@ namespace Vistas.Articulos
     /// <summary>
     /// Lógica de interacción para ABMArticulos.xaml
     /// </summary>
-    public partial class ABMArticulos : Window
+    public partial class ABMArticulos : Page
     {
         public static int id;
         CollectionView Vista;
@@ -40,17 +40,17 @@ namespace Vistas.Articulos
             Vista = (CollectionView)CollectionViewSource.GetDefaultView(Grid_content.DataContext);
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
+        private void btnFirst_Click(object sender, RoutedEventArgs e)
         {
             Vista.MoveCurrentToFirst();
         }
 
-        private void button7_Click(object sender, RoutedEventArgs e)
+        private void btnLast_Click(object sender, RoutedEventArgs e)
         {
             Vista.MoveCurrentToLast();
         }
 
-        private void button5_Click(object sender, RoutedEventArgs e)
+        private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
             Vista.MoveCurrentToPrevious();
             if (Vista.IsCurrentBeforeFirst)
@@ -59,7 +59,7 @@ namespace Vistas.Articulos
             }
         }
 
-        private void button6_Click(object sender, RoutedEventArgs e)
+        private void btnNext_Click(object sender, RoutedEventArgs e)
         {
             Vista.MoveCurrentToNext();
             if (Vista.IsCurrentAfterLast)
@@ -68,37 +68,38 @@ namespace Vistas.Articulos
             }
         }
 
-        private void button8_Click(object sender, RoutedEventArgs e)
+        private void btnVerLista_Click(object sender, RoutedEventArgs e)
         {
             ListaArticulos oLA = new ListaArticulos();
             oLA.Show();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void btnNuevo_Click(object sender, RoutedEventArgs e)
         {
             //agregado
             NuevoArticulo ventana = new NuevoArticulo();
             ventana.Show();
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            //agregado
-            id = Convert.ToInt32(textBox1.Text);
-            ModificarArticulo ventana = new ModificarArticulo();
-            ventana.Show();
+            Articulo oArticulo = Vista.CurrentItem as Articulo;
+            if (oArticulo != null)
+            {
+                ModificarArticulo md = new ModificarArticulo(oArticulo);
+                md.Show();
+            }
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             //agregado
-            idEliminarArticulo = Convert.ToInt32(textBox1.Text);
+            idEliminarArticulo = Convert.ToInt32(txbCodigo.Text);
             if (MessageBox.Show("Desea eliminar el articulo", "Eliminar Articulo", MessageBoxButton.YesNo, MessageBoxImage.Error) == MessageBoxResult.Yes)
             {
                 TrabajarArticulos.eliminarArticuloObs(idEliminarArticulo);
                 MessageBox.Show("Se elimino el Articulo correctamente");
                 TrabajarArticulos.TraerArticulosObs();
-                this.Hide();
             }
         }
     }

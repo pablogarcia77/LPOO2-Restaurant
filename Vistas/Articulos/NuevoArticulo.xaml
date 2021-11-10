@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.NuevoArticulo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Nuevo Articulo" Height="320" Width="316" Loaded="Window_Loaded" WindowStyle="None"   WindowStartupLocation="Manual" Left="300">
+        Title="Nuevo Articulo" Height="429" Width="305" Loaded="Window_Loaded" WindowStyle="None"   WindowStartupLocation="Manual" Left="300">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -10,21 +10,24 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid Height="281">
-        <Label Content="Codigo" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblCodigo" VerticalAlignment="Top" />
-        <Label Content="Descripcion" Height="28" HorizontalAlignment="Left" Margin="12,46,0,0" Name="lblDescrip" VerticalAlignment="Top" />
-        <Label Content="Familia" Height="28" HorizontalAlignment="Left" Margin="12,80,0,0" Name="lblFamilia" VerticalAlignment="Top" />
-        <Label Content="Unidad de Medida" Height="28" HorizontalAlignment="Left" Margin="12,114,0,0" Name="lblUM" VerticalAlignment="Top" />
-        <Label Content="Precio" Height="28" HorizontalAlignment="Left" Margin="12,148,0,0" Name="lblPrecio" VerticalAlignment="Top" />
-        <Label Content="Stock" Height="28" HorizontalAlignment="Left" Margin="12,182,0,0" Name="lblStock" VerticalAlignment="Top" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="162,12,0,0" Name="txtCodigo" VerticalAlignment="Top" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="162,46,0,0" Name="txtdescrip" VerticalAlignment="Top" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="162,80,0,0" Name="txtFamilia" VerticalAlignment="Top" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="162,0,0,144" Name="txtUM" VerticalAlignment="Bottom" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="162,148,0,0" Name="txtPrecio" VerticalAlignment="Top" Width="120" />
-        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="162,188,0,0" Name="checkBox1" VerticalAlignment="Top" />
-        <Button Content="Agregar" Height="50" HorizontalAlignment="Left" Margin="12,216,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="123" Click="button1_Click" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
-        <Button Content="Cancelar" Height="50" HorizontalAlignment="Left" Margin="159,216,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="123" Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cancelar}" />
+    <Grid Height="398" Width="294">
+        <Label Content="Descripcion" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblDescrip" VerticalAlignment="Top" />
+        <Label Content="Familia" Height="28" HorizontalAlignment="Left" Margin="12,46,0,0" Name="lblFamilia" VerticalAlignment="Top" />
+        <Label Content="Unidad de Medida" Height="28" HorizontalAlignment="Left" Margin="12,80,0,0" Name="lblUM" VerticalAlignment="Top" />
+        <Label Content="Precio" Height="28" HorizontalAlignment="Left" Margin="13,148,0,0" Name="lblPrecio" VerticalAlignment="Top" />
+        <Label Content="Stock" Height="28" HorizontalAlignment="Left" Margin="18,0,0,83" Name="lblStock" VerticalAlignment="Bottom" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="159,12,0,0" Name="txtdescrip" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="159,154,0,0" Name="txtPrecio" VerticalAlignment="Top" Width="120" />
+        <CheckBox IsChecked="False" Content="" Height="16" HorizontalAlignment="Left" Margin="159,299,0,0" Name="checkStock" VerticalAlignment="Top" />
+        <Button Content="Agregar" Height="50" HorizontalAlignment="Left" Margin="13,336,0,0" Name="btnAgregar" VerticalAlignment="Top" Width="123" Click="button1_Click" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
+        <Button Content="Cancelar" Height="50" HorizontalAlignment="Left" Margin="159,336,0,0" Name="btnCancelar" VerticalAlignment="Top" Width="123" Click="btnCancelar_Click" Style="{StaticResource ResourceKey=btn_plantilla_cancelar}" />
+        <ComboBox  DisplayMemberPath="Fam_Descrip"  SelectedValuePath="Fam_Id" Height="23" HorizontalAlignment="Left" Margin="159,46,0,0" Name="cmbFamilia" VerticalAlignment="Top" Width="120"  />
+        <ComboBox DisplayMemberPath="UM_Descrip"  SelectedValuePath="UM_Id" Height="23" HorizontalAlignment="Left" Margin="159,80,0,0" VerticalAlignment="Top" Width="120" Name="cmbUnidadMedida" />
+        <Label Content="Categoria" Height="28" HorizontalAlignment="Left" Margin="12,114,0,0" Name="lblCategoria" VerticalAlignment="Top" />
+        <ComboBox DisplayMemberPath="Cat_Descrip" SelectedValuePath="Cat_Id" Height="23" HorizontalAlignment="Left" Margin="159,119,0,0" Name="cmbCategoria" VerticalAlignment="Top" Width="120" />
+        <Label Content="Url" Height="28" HorizontalAlignment="Left" Margin="17,0,0,187" Name="label1" VerticalAlignment="Bottom" />
+        <Button Content="Cargar Imagen" Height="23" HorizontalAlignment="Left" Margin="159,188,0,0" Name="btnCargarImagen" VerticalAlignment="Top" Width="120" Click="button1_Click_1" />
+        <Image Height="65" HorizontalAlignment="Left" Margin="159,217,0,0" Name="imgDinamica" Stretch="Uniform" VerticalAlignment="Top" Width="101" />
     </Grid>
 </Window>
 

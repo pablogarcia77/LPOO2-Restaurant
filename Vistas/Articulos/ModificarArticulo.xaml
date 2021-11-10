@@ -1,24 +1,31 @@
 ﻿<Window x:Class="Vistas.ModificarArticulo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Modificar Articulo" Height="316" Width="315" WindowStartupLocation="CenterScreen" WindowStyle="None"  Left="300">
-
+        Title="Modificar Articulo" Height="366" Width="316" WindowStartupLocation="CenterScreen" WindowStyle="None"  Left="300" Loaded="Window_Loaded"
+       xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase">
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="ListaUM"
+            ObjectType="{x:Type svc:TrabajarArticulos}"
+            MethodName="TraerUnidadMedida">
+        </ObjectDataProvider>
+    </Window.Resources>
     <Grid>
-        <Grid Margin="0,0,-24,-28">
-            <Label Content="Codigo" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblCodigo" VerticalAlignment="Top" />
-            <Label Content="Descripcion" Height="28" HorizontalAlignment="Left" Margin="12,46,0,0" Name="lblDescrip" VerticalAlignment="Top" />
-            <Label Content="Familia" Height="28" HorizontalAlignment="Left" Margin="12,80,0,0" Name="lblFamilia" VerticalAlignment="Top" />
-            <Label Content="Unidad de Medida" Height="28" HorizontalAlignment="Left" Margin="12,114,0,0" Name="lblUM" VerticalAlignment="Top" />
-            <Label Content="Precio" Height="28" HorizontalAlignment="Left" Margin="12,148,0,0" Name="lblPrecio" VerticalAlignment="Top" />
-            <Label Content="Stock" Height="28" HorizontalAlignment="Left" Margin="12,182,0,0" Name="lblStock" VerticalAlignment="Top" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,12,0,0" Name="txtCodigo" VerticalAlignment="Top" Width="120" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,46,0,0" Name="txtdescrip" VerticalAlignment="Top" Width="120" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,80,0,0" Name="txtFamilia" VerticalAlignment="Top" Width="120" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,114,0,0" Name="txtUM" VerticalAlignment="Top" Width="120" />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,148,0,0" Name="txtPrecio" VerticalAlignment="Top" Width="120" />
-            <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="162,188,0,0" Name="checkBox1" VerticalAlignment="Top" />
-            <Button Content="Modificar" Height="35" HorizontalAlignment="Left" Margin="12,229,0,0" Name="button1" VerticalAlignment="Top" Width="123" Click="button1_Click" Loaded="button1_Loaded" />
-            <Button Content="Cancelar" Height="35" HorizontalAlignment="Left" Margin="159,229,0,0" Name="button2" VerticalAlignment="Top" Width="123" Click="button2_Click" />
+        <Grid Margin="0,0,-24,0">
+            <Label Content="Descripcion" Height="28" HorizontalAlignment="Left" Margin="18,20,0,0" Name="lblDescrip" VerticalAlignment="Top" />
+            <Label Content="Familia" Height="28" HorizontalAlignment="Left" Margin="18,53,0,0" Name="lblFamilia" VerticalAlignment="Top" />
+            <Label Content="Unidad de Medida" Height="28" HorizontalAlignment="Left" Margin="18,92,0,0" Name="lblUM" VerticalAlignment="Top" />
+            <Label Content="Precio" Height="28" HorizontalAlignment="Left" Margin="18,171,0,0" Name="lblPrecio" VerticalAlignment="Top" />
+            <Label Content="Stock" Height="28" HorizontalAlignment="Left" Margin="16,211,0,0" Name="lblStock" VerticalAlignment="Top" />
+            <Label Content="Categoria" Height="28" HorizontalAlignment="Left" Margin="18,126,0,0" Name="lblCategoria" VerticalAlignment="Top" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,24,0,0" Name="txtdescrip" VerticalAlignment="Top" Width="120" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="162,177,0,0" Name="txtPrecio" VerticalAlignment="Top" Width="120" />
+            <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="162,211,0,0" Name="checkBox1" VerticalAlignment="Top" />
+            <Button Content="Modificar" Height="35" HorizontalAlignment="Left" Margin="12,253,0,0" Name="button1" VerticalAlignment="Top" Width="123" Click="button1_Click" />
+            <Button Content="Cancelar" Height="35" HorizontalAlignment="Left" Margin="162,253,0,0" Name="button2" VerticalAlignment="Top" Width="123" Click="button2_Click" />
+            <ComboBox DisplayMemberPath="Fam_Descrip" SelectedValuePath="Fam_Id" Height="23" HorizontalAlignment="Left" Margin="162,58,0,0" Name="cmbFamilia" VerticalAlignment="Top" Width="120" />
+            <ComboBox DisplayMemberPath="UM_Descrip"  SelectedValuePath="UM_Id"  Height="23" HorizontalAlignment="Left" Margin="162,92,0,0" Name="cmbUnidadMedida" VerticalAlignment="Top" Width="120"/>
+            <ComboBox DisplayMemberPath="Cat_Descrip" SelectedValuePath="Cat_Id" Height="23" HorizontalAlignment="Left" Margin="162,131,0,0" Name="cmbCategoria" VerticalAlignment="Top" Width="120" />
         </Grid>
     </Grid>
 </Window>

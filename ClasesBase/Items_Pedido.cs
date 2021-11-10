@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 
 namespace ClasesBase
 {
-    public class Items_Pedido
+    public class Items_Pedido: INotifyPropertyChanged
     {
         private int item_ped_id;
 
@@ -33,21 +34,33 @@ namespace ClasesBase
         public decimal Precio
         {
             get { return precio; }
-            set { precio = value; }
+            set { precio = value;}
         }
         private decimal cantidad;
 
         public decimal Cantidad
         {
             get { return cantidad; }
-            set { cantidad = value; }
+            set { cantidad = value;
+            Notificador("Cantidad");
+            }
         }
         private decimal importe;
 
         public decimal Importe
         {
             get { return importe; }
-            set { importe = value; }
+            set { importe = value; Notificador("Importe"); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void Notificador(string prop)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
         }
     }
 }

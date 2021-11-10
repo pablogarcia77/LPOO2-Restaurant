@@ -38,14 +38,6 @@ namespace ClasesBase
             set { um_id = value; }
         }
 
-        private string art_img_uri;
-
-        public string Art_img_uri
-        {
-            get { return art_img_uri; }
-            set { art_img_uri = value; }
-        }
-
         private decimal art_precio;
 
         public decimal Art_precio
@@ -76,6 +68,14 @@ namespace ClasesBase
             }
         }
 
+        private int cat_id;
+
+        public int Cat_id
+        {
+            get { return cat_id; }
+            set { cat_id = value; }
+        }
+
         private Categoria categoria;
 
         public Categoria Categoria
@@ -103,6 +103,16 @@ namespace ClasesBase
             {
                 unidad_medida = value;
                 Notificador("Unidad_Medida");
+            }
+        }
+
+        private string art_img_uri;
+
+        public string Art_Img_Uri
+        {
+            get { return art_img_uri; }
+            set { art_img_uri = value;
+            Notificador("Art_Img_Uri");
             }
         }
 

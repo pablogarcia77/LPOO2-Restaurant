@@ -10,10 +10,41 @@ namespace ClasesBase
 {
     public class TrabajarCliente
     {
-        public static Cliente TraerCliente()
+        public static Cliente TraerClientePorId(int id)
         {
             Cliente oCliente = new Cliente();
-            oCliente.Cli_apellido = "Perez";
+
+            // Creamos la conexión
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.conexion);
+
+            // configurar el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Cliente WHERE Cli_Id=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            // configurar un adaptador
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // crear una tabla o conjunto de datos dataset
+            DataTable dt = new DataTable();
+
+            // llenar la tabla
+            da.Fill(dt);
+
+            if (dt.Rows.Count == 1)
+            {
+                oCliente.Cli_id = Convert.ToInt32(dt.Rows[0]["Cli_Id"]);
+                oCliente.Cli_apellido = dt.Rows[0]["Cli_Apellido"].ToString();
+                oCliente.Cli_nombre = dt.Rows[0]["Cli_Nombre"].ToString();
+            }
+            else
+            {
+                oCliente = null;
+            }
+
             return oCliente;
         }
 

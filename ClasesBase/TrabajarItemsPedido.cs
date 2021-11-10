@@ -45,6 +45,7 @@ namespace ClasesBase
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 Items_Pedido ip = new Items_Pedido();
+                ip.Item_ped_id = Convert.ToInt32(dt.Rows[0]["Item_Ped_Id"]);
                 ip.Art_id = Convert.ToInt32(dt.Rows[i]["Art_Id"]);
                 ip.Precio = Convert.ToDecimal(dt.Rows[i]["Precio"]);
                 ip.Cantidad = Convert.ToInt32(dt.Rows[i]["Cantidad"]);
@@ -72,6 +73,32 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@precio", ip.Precio);
             cmd.Parameters.AddWithValue("@cantidad", ip.Cantidad);
             cmd.Parameters.AddWithValue("@importe", ip.Importe);
+
+            // abrimos conexion
+            cnn.Open();
+
+            // ejecutar insert
+            cmd.ExecuteNonQuery();
+
+            // cerrar la conexion
+            cnn.Close();
+        }
+
+        public static void ModificarItemsPedido(Items_Pedido oIP)
+        {
+            // Creamos la conexión
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.conexion);
+
+            // configurar el comando
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"UPDATE Items_Pedido SET Cantidad=@cantidad, Importe=@importe 
+                                WHERE Item_Ped_Id=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@cantidad", oIP.Cantidad);
+            cmd.Parameters.AddWithValue("@importe", oIP.Importe);
+            cmd.Parameters.AddWithValue("@id", oIP.Item_ped_id);
 
             // abrimos conexion
             cnn.Open();

@@ -49,7 +49,7 @@ namespace Vistas.Conversores
             }
             else
             {
-                return new SolidColorBrush(Colors.Wheat);
+                return new SolidColorBrush(Colors.Transparent);
             }
         }
 

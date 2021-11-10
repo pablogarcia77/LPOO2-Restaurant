@@ -1,0 +1,18 @@
+﻿<Page x:Class="Vistas.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="576" Width="696">
+    <Grid>
+        
+        <StackPanel Grid.Row="1">
+            <MediaElement LoadedBehavior="Manual" Name="mePlayer" Source="C:\Users\pablo\Downloads\rickroll.wmv" Stretch="Fill" Width="638" Height="448"></MediaElement>
+            <Label Name="lblStatus" Content="Nada por aqui" HorizontalContentAlignment="Center" Margin="5" />
+            <Slider Height="23" Name="SliderPosicion" Width="435" ValueChanged="posicion" />
+            <WrapPanel HorizontalAlignment="Center">
+                <Button Name="btnPlay" Click="btnPlay_Click">Play</Button>
+                <Button Name="btnPause" Margin="5,0" Click="btnPause_Click">Pause</Button>
+                <Button Name="btnStop" Click="btnStop_Click">Stop</Button>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Page>

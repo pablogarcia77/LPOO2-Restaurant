@@ -28,7 +28,39 @@ namespace ClasesBase
             return dt;
         }
 
+        public static ObservableCollection<Articulo> TraerArticulosObs()
+        {
+            ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
+            SqlCommand consultaSql = new SqlCommand(@"SELECT dbo.Articulo.Art_Id, dbo.Articulo.Art_Descrip, dbo.Familia.Fam_Descrip, dbo.Unidad_Medida.UM_Descrip, dbo.Categorias.Cat_Descrip, dbo.Articulo.Art_Precio
+                            FROM   dbo.Articulo INNER JOIN
+                         dbo.Familia ON dbo.Articulo.Fam_Id = dbo.Familia.Fam_Id INNER JOIN
+                         dbo.Categorias ON dbo.Articulo.Cat_Id = dbo.Categorias.Cat_Id INNER JOIN
+                         dbo.Unidad_Medida ON dbo.Articulo.UM_Id = dbo.Unidad_Medida.UM_Id");
+            consultaSql.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(consultaSql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Articulo articuloBD = new Articulo();
+                Familia familia = new Familia();
+                Categoria categoria = new Categoria();
+                Unidad_Medida unidad_Medida = new Unidad_Medida();
+                articuloBD.Art_id = Convert.ToInt32(dt.Rows[i][0]);
+                articuloBD.Art_descrip = Convert.ToString(dt.Rows[i][1]);
+                familia.Fam_descrip = Convert.ToString(dt.Rows[i][2]);
+                categoria.Cat_descrip = Convert.ToString(dt.Rows[i][3]);
+                unidad_Medida.Um_descrip = Convert.ToString(dt.Rows[i][4]);
+                articuloBD.Art_precio = Convert.ToDecimal(dt.Rows[i][5]);
+                listaArticulo.Add(new Articulo(articuloBD.Art_id, articuloBD.Art_descrip, familia, categoria, unidad_Medida, articuloBD.Art_precio));
+
+            }
+            return listaArticulo;
+        }
+
+        /**
         public static ObservableCollection<Articulo> TraerArticulosObs()
         {
             ObservableCollection<Articulo> listaArticulo = new ObservableCollection<Articulo>();
@@ -58,7 +90,7 @@ namespace ClasesBase
             }
             return listaArticulo;
         }
-
+        **/
         public static string TraerArticuloPorId(int id)
         {
             string articulo;
@@ -123,15 +155,15 @@ namespace ClasesBase
         {
 
             SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
-            SqlCommand consultaSQL = new SqlCommand("Insert Into Articulo (Art_id,Art_Descrip,Fam_Id,UM_Id,Art_Precio,Art_Maneja_Stock) values (@id,@d,@f,@u,@p,@s)");
+            SqlCommand consultaSQL = new SqlCommand("Insert Into Articulo (Art_Descrip,Fam_Id,UM_Id,Art_Precio,Art_Maneja_Stock,Cat_Id,Art_Img_Uri) values (@d,@f,@u,@p,@s,@c,@a)");
             consultaSQL.Connection = cn;
-            consultaSQL.Parameters.AddWithValue("@id", nuevoArticulo.Art_id);
             consultaSQL.Parameters.AddWithValue("@d", nuevoArticulo.Art_descrip);
             consultaSQL.Parameters.AddWithValue("@f", nuevoArticulo.Fam_id);
             consultaSQL.Parameters.AddWithValue("@p", nuevoArticulo.Art_precio);
             consultaSQL.Parameters.AddWithValue("@u", nuevoArticulo.Um_id);
-
             consultaSQL.Parameters.AddWithValue("@s", nuevoArticulo.Art_maneja_stock);
+            consultaSQL.Parameters.AddWithValue("@c", nuevoArticulo.Categoria.Cat_id);
+            consultaSQL.Parameters.AddWithValue("@a", nuevoArticulo.Art_Img_Uri);
             cn.Open();
             consultaSQL.ExecuteNonQuery();
             cn.Close();
@@ -140,7 +172,7 @@ namespace ClasesBase
         public static void modificarArticuloObs(Articulo modificarArticulo)
         {
             SqlConnection cn = new SqlConnection(Properties.Settings.Default.conexion);
-            SqlCommand consultaSql = new SqlCommand("Update Articulo Set Art_Descrip=@d,Fam_Id=@f,UM_Id=@u,Art_Precio=@p where Art_Id=@id");
+            SqlCommand consultaSql = new SqlCommand("Update Articulo Set Art_Descrip=@d,Fam_Id=@f,UM_Id=@u,Art_Precio=@p,Art_Maneja_Stock=@s,Cat_Id=@c where Art_Id=@id");
             consultaSql.Connection = cn;
 
             consultaSql.Parameters.AddWithValue("@id", modificarArticulo.Art_id);
@@ -148,6 +180,8 @@ namespace ClasesBase
             consultaSql.Parameters.AddWithValue("@f", modificarArticulo.Fam_id);
             consultaSql.Parameters.AddWithValue("@u", modificarArticulo.Um_id);
             consultaSql.Parameters.AddWithValue("@p", modificarArticulo.Art_precio);
+            consultaSql.Parameters.AddWithValue("@s", modificarArticulo.Art_maneja_stock);
+            consultaSql.Parameters.AddWithValue("@c", modificarArticulo.Categoria.Cat_id);
             cn.Open();
             consultaSql.ExecuteNonQuery();
             cn.Close();

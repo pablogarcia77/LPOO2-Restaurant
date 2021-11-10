@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClasesBase;
 
 namespace Vistas.Impresiones
 {
@@ -37,12 +38,24 @@ namespace Vistas.Impresiones
 
         public VistaPreviaArticulos(CollectionViewSource lista)
         {
+            vistaColeccionFiltrada = new CollectionViewSource();
             vistaColeccionFiltrada = lista;
+
+            Binding binding = new Binding();
+            binding.Source = vistaColeccionFiltrada;
+            BindingOperations.SetBinding(lista, ListView.ItemsSourceProperty, binding);
         }
 
-        public CollectionViewSource RenderLista()
+        public CollectionViewSource Render()
         {
             return vistaColeccionFiltrada;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //vistaColeccionFiltrada = new CollectionViewSource();
+        }
+
+
     }
 }

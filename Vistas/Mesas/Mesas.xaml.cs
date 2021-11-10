@@ -23,9 +23,11 @@ namespace Vistas
     /// <summary>
     /// Lógica de interacción para Mesas.xaml
     /// </summary>
-    public partial class Mesas : Window
+    public partial class Mesas : Page
     {
         public static int idMesa;
+
+        public string estadoMesa = null;
 
         public Mesas()
         {
@@ -74,10 +76,15 @@ namespace Vistas
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            CargarMesas();
+        }
+
+        private void CargarMesas()
+        {
             ConversorDeEstados ce = new ConversorDeEstados();
 
             int left = 25;
-            int top = 15;
+            int top = 50;
             DataTable mesas = TrabajarMesa.TotalMesas();
 
             for (int i = 1; i <= mesas.Rows.Count; i++)
@@ -87,8 +94,12 @@ namespace Vistas
                 //Set name and content
                 oBtn.Name = "button" + i.ToString();
                 oBtn.Content = i.ToString();
+                //Set tooltip
+                oBtn.ToolTip = mesas.Rows[i - 1]["Mesa_Estado"].ToString();
+                //Set bolder font
+                oBtn.FontWeight = FontWeights.Bold;
                 //Set background color & click event
-                oBtn.Background = convertString(mesas.Rows[i-1]["Mesa_Estado"].ToString());
+                oBtn.Background = convertString(mesas.Rows[i - 1]["Mesa_Estado"].ToString());
                 oBtn.Click += new RoutedEventHandler(CheckLibre);
                 //Set width, height & VHAlign
                 oBtn.Height = 55;
@@ -105,7 +116,7 @@ namespace Vistas
                 left = left + 125;
 
                 //2th, 3th & 4th Row
-                if (i % 4 == 0 && i >=4)
+                if (i % 4 == 0 && i >= 4)
                 {
                     top = top + 70;
                 }
@@ -123,7 +134,6 @@ namespace Vistas
                 //Add button to grid
                 Grilla.Children.Add(oBtn);
             }
-
         }
 
         private void CheckLibre(object sender, RoutedEventArgs e)
@@ -132,20 +142,58 @@ namespace Vistas
             idMesa = Convert.ToInt32(button.Content.ToString());
             Mesa oMesa = new Mesa();
             oMesa = TrabajarMesa.TraerMesaPorId(idMesa);
-            //MessageBox.Show(button.GetBindingExpression(BackgroundProperty).DataItem.ToString());
-            if (oMesa.Mesa_estado == "Libre")
+
+            if (estadoMesa == null)
             {
-                //MessageBox.Show(button.Content.ToString());
-                Pedidos oPedidos = new Pedidos();
-                oPedidos.Show();
+                
+                //MessageBox.Show(button.GetBindingExpression(BackgroundProperty).DataItem.ToString());
+                if (oMesa.Mesa_estado == "Libre" || oMesa.Mesa_estado == "En espera de comida" || oMesa.Mesa_estado == "Servidos" || oMesa.Mesa_estado == "Pidiendo")
+                {
+                    //MessageBox.Show(button.Content.ToString());
+                    //Pedidos oPedidos = new Pedidos();
+                    //oPedidos.Show();
+                    if (oMesa.Mesa_estado == "Libre")
+                    {
+                        oMesa.Mesa_estado = "Pidiendo";
+                        TrabajarMesa.ModificarEstadoMesa(oMesa);
+                    }
+                    Principal.Container.Source = new Uri("/Ventas/Pedidos.xaml", UriKind.RelativeOrAbsolute);
+
+                }
+                if (oMesa.Mesa_estado == "Esperando cuenta" || oMesa.Mesa_estado == "Pagando")
+                {
+                    if (oMesa.Mesa_estado == "Esperando cuenta")
+                    {
+                        oMesa.Mesa_estado = "Pagando";
+                        TrabajarMesa.ModificarEstadoMesa(oMesa);
+                    }
+                    Pedidos.idMesa = idMesa;
+                    ImpresionPedidos oImpP = new ImpresionPedidos();
+                    oImpP.Show();
+                }
             }
-            if(oMesa.Mesa_estado == "En espera de comida")
-            {
-                Pedidos.idMesa = idMesa;
-                ImpresionPedidos oImpP = new ImpresionPedidos();
-                oImpP.Show();
+            else {
+                oMesa.Mesa_estado = estadoMesa;
+                TrabajarMesa.ModificarEstadoMesa(oMesa);
+                estadoMesa = null;
+                CargarMesas();
             }
+            CargarMesas();
+        }
+        
+        private void listEstados_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //estadoMesa = listEstados.SelectedValue.ToString();
         }
 
+        private void btnCambiarEstado_Click(object sender, RoutedEventArgs e)
+        {
+            estadoMesa = listEstados.SelectedValue.ToString();
+            if (listEstados.SelectedValue != null)
+            {
+                listEstados.SelectedValue = null;
+            }
+        }
+        
     }
 }

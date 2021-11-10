@@ -3,25 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:data="clr-namespace:Vistas.Impresiones"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-        Title="Vista previa de impresión" Height="344" Width="686">
-    <Window.Resources>
-       <ObjectDataProvider
-            x:Key="Lista"
-            ObjectType="{x:Type data:VistaPreviaArticulos}"
-            MethodName="RenderLista"
-        />
-        
-        <CollectionViewSource x:Key="Vista_Articulos" Source="{StaticResource ResourceKey=Lista}">
-            <CollectionViewSource.SortDescriptions>
-                <scm:SortDescription PropertyName="Art_descrip" Direction="Ascending" />
-            </CollectionViewSource.SortDescriptions>
-        </CollectionViewSource>
-    </Window.Resources>
+        Title="Vista previa de impresión" Height="344" Width="686" Loaded="Window_Loaded">
+    
     <StackPanel>
         <FlowDocumentReader Height="238">
             <FlowDocument Name="DocMain">
                 <BlockUIContainer>
-                    <ListView ItemsSource="{Binding Source={StaticResource ResourceKey=Vista_Articulos}}">
+                    <ListView x:Name="lista">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>
@@ -38,4 +26,5 @@
         </FlowDocumentReader>
         <Button Content="Imprimir" Width="200" Name="btnImprimir" Click="btnImprimir_Click"/>
     </StackPanel>
+
 </Window>

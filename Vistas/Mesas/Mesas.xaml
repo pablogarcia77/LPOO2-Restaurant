@@ -1,37 +1,87 @@
-﻿<Window x:Class="Vistas.Mesas"
+﻿<Page x:Class="Vistas.Mesas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:convert="clr-namespace:Vistas.Conversores"
-        Title="Mesas" Height="516" Width="909" Loaded="Window_Loaded">
-    <Window.Resources>
-        <XmlDataProvider x:Key="Estados" Source="EstadosMesa.xml" XPath="/estados"/>
-        <convert:ConversorDeEstados x:Key="ConvertColores" />
+        Title="Mesas" Height="516" Width="788" Loaded="Window_Loaded">
+    <Page.Resources>
 
-        <DataTemplate x:Key="FondoEstado" >
-            <StackPanel>
-                <TextBlock Background="{Binding ElementName=listBox1,XPath=estado/@name,Converter={StaticResource ConvertColores}}"
+        
+
+        
+
+
+        <ResourceDictionary>
+            <XmlDataProvider x:Key="Estados" Source="EstadosMesa.xml" XPath="/estados"/>
+            <convert:ConversorDeEstados x:Key="ConvertColores" />
+
+            <DataTemplate x:Key="FondoEstado" >
+                <StackPanel>
+                    <TextBlock Background="{Binding ElementName=listBox1,XPath=estado/@name,Converter={StaticResource ConvertColores}}"
                     FontWeight="Bold"/>
-            </StackPanel>
-        </DataTemplate>
-        <DataTemplate x:Key="MesasDT">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Path=Mesa_Id}"></TextBlock>
-                <TextBlock> - </TextBlock>
-                <TextBlock Text="{Binding Path=Mesa_Estado}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-    </Window.Resources>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="MesasDT">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Path=Mesa_Id}"></TextBlock>
+                    <TextBlock> -</TextBlock>
+                    <TextBlock Text="{Binding Path=Mesa_Estado}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Estilos/Estilos.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     
     <Grid x:Name="Grilla">
-        <Rectangle Height="48" HorizontalAlignment="Left" Margin="25,406,0,0" Name="rectangle1" Stroke="Green" VerticalAlignment="Top" Width="50" Fill="#FF007D00" RadiusX="0" RadiusY="0" />
-        <Rectangle Height="48" HorizontalAlignment="Left" Margin="150,406,0,0" Name="rectangle2" Stroke="Red" VerticalAlignment="Top" Width="50" Fill="Red" />
-        <Label Content="Libre" Height="28" HorizontalAlignment="Left" Margin="80,406,0,0" Name="label1" VerticalAlignment="Top" />
-        <Label Content="Ocupada" Height="28" HorizontalAlignment="Left" Margin="206,406,0,0" Name="label2" VerticalAlignment="Top" />
-        <ListBox Height="165" HorizontalAlignment="Left" Margin="580,249,0,0" x:Name="listBox1" VerticalAlignment="Top" Width="183"
-            ItemsSource="{Binding Source={StaticResource Estados},
-            XPath=estado/@name}" />
-        <StackPanel Height="30" Width="100"
-                Background="{Binding ElementName=listBox1, Path=SelectedValue, Converter={StaticResource ConvertColores}}" Margin="776,250,12,198">
-        </StackPanel>
+            <ListBox x:Name="listEstados" ItemsSource="{Binding Source={StaticResource Estados},
+            XPath=estado/@name}" SelectionChanged="listEstados_SelectionChanged" Width="143" Foreground="White" Margin="632,51,12,291">
+                
+                <ListBox.Background>
+                    <SolidColorBrush />
+                </ListBox.Background>
+                <ListBox.Resources>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Border x:Name="Bd"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Padding="{TemplateBinding Padding}"
+                                        SnapsToDevicePixels="true">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="Selector.IsSelectionActive" Value="False" />
+                                                <Condition Property="IsSelected" Value="True" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="Background" TargetName="Bd" Value="{Binding ElementName=listEstados, Path=SelectedValue, Converter={StaticResource ConvertColores}}" />
+                                        </MultiTrigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="Selector.IsSelectionActive" Value="True" />
+                                                <Condition Property="IsSelected" Value="True" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="Background" TargetName="Bd" Value="{Binding ElementName=listEstados, Path=SelectedValue, Converter={StaticResource ConvertColores}}" />
+                                        </MultiTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.Resources>
+            </ListBox>
+        <Rectangle Height="48" HorizontalAlignment="Left" Margin="632,287,0,0" Name="rectangle1" Stroke="Green" VerticalAlignment="Top" Width="50" Fill="#FF007D00" RadiusX="0" RadiusY="0" />
+        <Rectangle Height="48" HorizontalAlignment="Left" Margin="632,341,0,0" Name="rectangle2" Stroke="Red" VerticalAlignment="Top" Width="50" Fill="Red" />
+        <Label Content="Libre" Height="28" HorizontalAlignment="Left" Margin="687,298,0,0" Name="label1" VerticalAlignment="Top" Foreground="White" />
+        <Label Content="Ocupada" Height="28" HorizontalAlignment="Left" Margin="688,352,0,0" Name="label2" VerticalAlignment="Top" Foreground="White" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="632,31,0,0" Name="txbColores" Text="Colores de Referencia" VerticalAlignment="Top" Width="143" FontWeight="Bold" Foreground="White" />
+        <Button Content="Cambiar Estado" Height="23" HorizontalAlignment="Left" Margin="632,231,0,0" Name="btnCambiarEstado" VerticalAlignment="Top" Width="143" Click="btnCambiarEstado_Click" Style="{StaticResource ResourceKey=btn_plantilla_aceptar}" />
+        <TextBlock Height="39" HorizontalAlignment="Left" Margin="12,12,0,0" Name="txbTitulo" Text="Mesas" VerticalAlignment="Top" Width="189" FontSize="26" FontWeight="Bold" Foreground="White" />
     </Grid>
-</Window>
+</Page>

@@ -21,6 +21,9 @@ namespace Vistas
     /// </summary>
     public partial class Principal : Window
     {
+
+        public static Frame Container;
+
         public Principal()
         {
             InitializeComponent();
@@ -42,7 +45,11 @@ namespace Vistas
             else {
                 btnMesas.IsEnabled = false;
             }
-            
+            Container = new Frame();
+            Container.Height = 669;
+            Container.Width = 795;
+            Container.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
+            stkContainer.Children.Add(Container);
         }
 
         private void hideSubmenu()
@@ -70,6 +77,11 @@ namespace Vistas
             }
         }
 
+        private void btnABMArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Source = new Uri("/Articulos/ABMArticulos.xaml", UriKind.RelativeOrAbsolute);
+        }
+
         private void btnNuevoArticulo_Click(object sender, RoutedEventArgs e)
         {
             NuevoArticulo oNuevoArticulo = new NuevoArticulo();
@@ -86,6 +98,24 @@ namespace Vistas
         {
             EliminarArticulo oEliminarArt = new EliminarArticulo();
             oEliminarArt.Show();
+        }
+
+        private void btnArticulos_Click(object sender, RoutedEventArgs e)
+        {
+            showSubMenu(stackArticulos);
+        }
+
+        private void btnListarArticulo_Click(object sender, RoutedEventArgs e)
+        {
+            ListaArticulos oLA = new ListaArticulos();
+            oLA.Show();
+        }
+
+        private void btnMostrarArticulos_Click(object sender, RoutedEventArgs e)
+        {
+            MostrarArticulos oMostrarArticulos = new MostrarArticulos();
+            oMostrarArticulos.Show();
+
         }
 
         private void btnNuevoCliente_Click(object sender, RoutedEventArgs e)
@@ -117,24 +147,6 @@ namespace Vistas
         private void btnUsuarios_Click(object sender, RoutedEventArgs e)
         {
             showSubMenu(stackUsuarios);
-        }
-
-        private void btnArticulos_Click(object sender, RoutedEventArgs e)
-        {
-            showSubMenu(stackArticulos);
-        }
-
-        private void btnListarArticulo_Click(object sender, RoutedEventArgs e)
-        {
-            ListaArticulos oLA = new ListaArticulos();
-            oLA.Show();
-        }
-
-        private void btnMostrarArticulos_Click(object sender, RoutedEventArgs e)
-        {
-            MostrarArticulos oMostrarArticulos = new MostrarArticulos();
-            oMostrarArticulos.Show();
-
         }
 
         private void btnModificarUsuario_Click(object sender, RoutedEventArgs e)
@@ -236,18 +248,25 @@ namespace Vistas
 
         private void btnMesas_Click(object sender, RoutedEventArgs e)
         {
+            /**
             Mesas oMesas = new Mesas();
             oMesas.Show();
+            **/
+            Container.Source = new Uri("/Mesas/Mesas.xaml", UriKind.RelativeOrAbsolute);
         }
 
         private void btnNuevoUsuario_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void btnABMArticulo_Click(object sender, RoutedEventArgs e)
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
-            ABMArticulos oABMArticulos = new ABMArticulos();
-            oABMArticulos.Show();
+            Container.Source = new Uri("/About.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void btnCajas_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Source = new Uri("/Caja/VistaCaja.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }
